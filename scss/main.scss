@@ -1,0 +1,74 @@
+@import "../fonts/fonts";
+@import "./vars/global";
+@import "./templates/general";
+@import "./parts/how";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $mainFont;
+}
+
+.wrapper {
+  height: 100vh;
+  background-image: url('../images/legaltech.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainMenu {
+  display: flex;
+  justify-content: center;
+  ul {
+    display: inline-block;
+    margin: 30px 0;
+    li {
+      display: inline-block;
+      font-size: 20px;
+      list-style: none;
+      text-transform: uppercase;
+      margin-right: 25px;
+      &:nth-child(4):hover {
+        color: green;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.main {
+  margin-top: 150px;
+  h1, h2, {
+    @extend %softWhiteShadow;
+    text-align: center;
+  }
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  .buttonFree {
+    @extend %buttonPaid;
+    display: block;
+    margin: 30px auto;
+    &:hover {
+      transition: 0.5s;
+      box-shadow: 0 0 15px #fff;
+    }
+    &:active {
+      transition: 0.1s;
+      transform: scale(0.95);
+    }
+  }
+}

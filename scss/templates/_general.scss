@@ -1,0 +1,58 @@
+%softWhiteShadow {
+  text-shadow:  -0   -2px 3px #FFFFFF,
+            		 0   -2px 3px #FFFFFF,
+            		-0    2px 3px #FFFFFF,
+            		 0    2px 3px #FFFFFF,
+            		-2px -0   3px #FFFFFF,
+            		 2px -0   3px #FFFFFF,
+            		-2px  0   3px #FFFFFF,
+            		 2px  0   3px #FFFFFF,
+            		-1px -2px 3px #FFFFFF,
+            		 1px -2px 3px #FFFFFF,
+            		-1px  2px 3px #FFFFFF,
+            		 1px  2px 3px #FFFFFF,
+            		-2px -1px 3px #FFFFFF,
+            		 2px -1px 3px #FFFFFF,
+            		-2px  1px 3px #FFFFFF,
+            		 2px  1px 3px #FFFFFF,
+            		-2px -2px 3px #FFFFFF,
+            		 2px -2px 3px #FFFFFF,
+            		-2px  2px 3px #FFFFFF,
+            		 2px  2px 3px #FFFFFF,
+            		-2px -2px 3px #FFFFFF,
+            		 2px -2px 3px #FFFFFF,
+            		-2px  2px 3px #FFFFFF,
+            		 2px  2px 3px #FFFFFF;
+}
+
+%buttonPaid {
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  background-color: $paidColor;
+  &:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px #fff;
+  }
+  &:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+  }
+}
+
+%buttonFree {
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  padding: 20px;
+  background-color: $freeColor;
+  &:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px #fff;
+  }
+  &:active {
+    transition: 0.1s;
+    transform: scale(0.95);
+  }
+}
