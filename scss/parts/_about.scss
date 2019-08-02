@@ -1,0 +1,26 @@
+.mainAbout {
+  max-width: 1024px;
+  margin: 0 auto;
+  @extend %descBlock;
+  >p {
+
+  }
+  img {
+    padding: 30px;
+    float: left;
+  }
+  h2, h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .partners {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .partner {
+    border: 1px dotted black;
+    width: 200px;
+    height: 200px;
+  }
+}
