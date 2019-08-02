@@ -63,6 +63,7 @@
   background-image: url("../images/legaltech_page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .mainInfo > p {
@@ -78,7 +79,7 @@
   margin-top: 50px;
 }
 .infoGraph .block {
-  border: 1px solid black;
+  box-shadow: 0 0 30px 5px black;
   background-color: #FFF;
   width: 250px;
   height: 330px;
@@ -100,6 +101,96 @@
   justify-content: space-around;
   margin-top: 50px;
 }
+.mainFaq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.mainFaq > p {
+  font-size: 20px;
+  line-height: 25px;
+  text-align: justify;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px grey;
+  margin-bottom: 50px;
+}
+.mainFaq .faqQu {
+  margin-top: 15px;
+}
+.mainFaq .quWrapper {
+  display: inline-block;
+  width: 80%;
+}
+.mainFaq .quWrapper .question {
+  display: block;
+  background-color: #fff;
+  height: 50px;
+  vertical-align: middle;
+  padding-left: 20px;
+  font-size: 20px;
+  line-height: 50px;
+  border-left: 3px solid black;
+  box-shadow: 5px -5px 10px gray;
+  cursor: pointer;
+}
+.mainFaq .quWrapper .ask {
+  line-height: 30px;
+  text-align: justify;
+  background-color: #fff;
+  box-shadow: 15px -4px 10px -10px gray;
+  transition: 0.5s;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.mainFaq .faqPlus, .mainFaq .faqMinus {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: top;
+  cursor: pointer;
+}
+.mainFaq .faqPlus {
+  background-image: url("../images/plus.png");
+}
+.mainFaq .faqMinus {
+  background-image: url("../images/minus.png");
+  display: none;
+}
+
+#check, #check1, #check2, #check3, #check4 {
+  display: none;
+}
+
+#check:checked ~ .plus,
+#check1:checked ~ .plus1,
+#check2:checked ~ .plus2,
+#check3:checked ~ .plus3,
+#check4:checked ~ .plus4 {
+  display: none;
+}
+
+#check:checked ~ .minus,
+#check1:checked ~ .minus1,
+#check2:checked ~ .minus2,
+#check3:checked ~ .minus3,
+#check4:checked ~ .minus4 {
+  display: inline-block;
+}
+
+#check:checked ~ .quWrapper > .open,
+#check1:checked ~ .quWrapper > .open1,
+#check2:checked ~ .quWrapper > .open2,
+#check3:checked ~ .quWrapper > .open3,
+#check4:checked ~ .quWrapper > .open4 {
+  transition: 1s;
+  height: 150px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
 * {
   margin: 0;
   padding: 0;

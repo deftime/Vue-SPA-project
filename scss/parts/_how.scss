@@ -1,8 +1,5 @@
 .wrapperPage {
-  height: 100vh;
-  background-image: url('../images/legaltech_page.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  @extend %wrapperPage;
 }
 
 .mainInfo {
@@ -19,7 +16,7 @@
   align-items: center;
   margin-top: 50px;
   .block {
-    border: 1px solid black;
+    box-shadow: 0 0 30px 5px black;
     background-color: #FFF;
     width: 250px;
     height: 330px;

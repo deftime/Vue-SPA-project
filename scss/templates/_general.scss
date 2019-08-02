@@ -56,3 +56,11 @@
     transform: scale(0.95);
   }
 }
+
+%wrapperPage {
+  height: 100vh;
+  background-image: url('../images/legaltech_page.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
