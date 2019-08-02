@@ -1,0 +1,37 @@
+.mainPro {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-bottom: 0.1px;
+}
+
+.buttonBlock .buttonPaid {
+  @extend %buttonPaid;
+}
+
+.mainPro {
+  > p {
+    @extend %descBlock;
+  }
+  .proTab {
+    margin-top: 30px;
+    table {
+      border: 3px solid black;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+    th {
+      border: 3px solid black;
+      font-size: 20px;
+      padding: 10px 0;
+    }
+    td {
+      font-size: 19px;
+      padding: 10px;
+    }
+    tr > td:nth-child(2),
+    tr > td:nth-child(3) {
+      text-align: center;
+      width: 170px;
+    }
+  }
+}

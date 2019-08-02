@@ -3,6 +3,7 @@
 @import "./templates/general";
 @import "./parts/how";
 @import "./parts/faq";
+@import "./parts/pro";
 
 * {
   margin: 0;
@@ -11,6 +12,10 @@
 
 body {
   font-family: $mainFont;
+}
+
+.wrapperPage {
+  @extend %wrapperPage;
 }
 
 .wrapper {

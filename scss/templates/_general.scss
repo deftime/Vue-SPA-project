@@ -58,9 +58,18 @@
 }
 
 %wrapperPage {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('../images/legaltech_page.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+%descBlock {
+  font-size: 20px;
+  line-height: 25px;
+  text-align: justify;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px grey;
 }

@@ -1,17 +1,8 @@
-.wrapperPage {
-  @extend %wrapperPage;
-}
-
 .mainFaq {
   max-width: 800px;
   margin: 0 auto;
   > p {
-    font-size: 20px;
-    line-height: 25px;
-    text-align: justify;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px grey;
+    @extend %descBlock;
     margin-bottom: 50px;
   }
   .faqQu {
@@ -92,4 +83,5 @@
   height: 150px;
   padding: 23px;
   border-top: 1px dotted black;
+  margin-bottom: 30px;
 }

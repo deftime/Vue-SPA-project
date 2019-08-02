@@ -1,12 +1,7 @@
-.wrapperPage {
-  @extend %wrapperPage;
-}
-
 .mainInfo {
   > p {
+    @extend %descBlock;
     margin: 30px 0;
-    font-size: 20px;
-    text-align: center;
   }
 }
 
@@ -37,7 +32,8 @@
 .buttonBlock {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   .buttonFree {
     @extend %buttonFree;
   }
