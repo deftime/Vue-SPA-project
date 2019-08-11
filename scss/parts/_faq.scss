@@ -1,6 +1,7 @@
 .mainFaq {
-  max-width: 800px;
+  max-width: 1024px;
   margin: 0 auto;
+  text-align: center;
   > p {
     @extend %descBlock;
     margin-bottom: 50px;
@@ -11,6 +12,7 @@
   .quWrapper {
     display: inline-block;
     width: 80%;
+    text-align: left;
     .question {
       display: block;
       background-color: #fff;

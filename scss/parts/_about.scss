@@ -2,8 +2,8 @@
   max-width: 1024px;
   margin: 0 auto;
   @extend %descBlock;
-  >p {
-
+  hr {
+  margin: 30px 0;
   }
   img {
     padding: 30px;
@@ -22,5 +22,31 @@
     border: 1px dotted black;
     width: 200px;
     height: 200px;
+  }
+}
+
+.feedbackForm {
+  width: 70%;
+  margin: 0 auto;
+  #ff-mail {
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  #ff-text {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+  }
+  input[type="submit"] {
+    @extend %buttonPaid;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input, textarea {
+    margin-bottom: 10px;
   }
 }

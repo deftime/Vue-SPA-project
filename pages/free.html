@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Law-ONLINE - Питання Pro</title>
+</head>
+<body>
+
+<div class="wrapperPage">
+  <nav class="mainMenu">
+    <ul>
+      <li><a href="../index.html">Головна</a></li>
+      <li><a href="how-it-works.html">Як це працює?</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="pro.html">Питання Pro</a></li>
+      <li><a href="about.html">Хто ми?</a></li>
+    </ul>
+  </nav>
+  <div class="mainQu">
+    <div class="descQu">
+      <p>На цій сторінці ви можете скористатися сервісом у <strong>загальному режимі</strong> та надіслати безкоштовне юридичне запитання.</p>
+      <p>Запитання у загальному режимі обробляються у порядку черги, а час очікування відповіді залежить від завантаження сервісу.</p>
+      <p>Заповніть форму праворуч, вказавши ваше ім'я, адресу електронної пошти та сформуйте запитання. Суть питання описуйте лаконічно, стисло та максимально конкретно, уникаючи непотрібних та неважливих деталей.</p>
+      <p><strong>Усі поля є обов'язковими для заповнення.</strong></p>
+      <p>Зверніть увагу на електронну пошту! Саме на неї ви отримаєте відповідь. Вказуйте діючу пошту та перед відправкою перевірте на відсутність помилок.</p>
+    </div>
+    <div class="formQu">
+      <form class="formFree" id="formFree" action="#" method="post">
+        <label for="free-name">Ваше ім'я:</label><br>
+        <input type="text" id="free-name" name="free-name" value="" required><br>
+        <label for="free-mail">Ваша електронна пошта:</label><br>
+        <input type="email" id="free-mail" name="free-mail" value="" required><br>
+        <label for="free-qu">Сформуйте ваше запитання:</label><br>
+        <textarea name="free-qu" id="free-qu" rows="8" cols="55" required></textarea>
+      </form>
+    </div>
+    <hr>
+    <div class="buttQu">
+      <input type="checkbox" name="qu-check" value="agree" form="formFree" required><span>Я погоджуюсь з Правилами та Умовами послуги</span><br>
+      <button type="submit" form="formFree">Надіслати безкоштовне питання</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -22,38 +22,38 @@
   font-weight: bold;
   font-style: italic;
 }
-.main h1, .main h2 {
+.main h1, .main h2, .formQu label {
   text-shadow: 0 -2px 3px #FFFFFF, 0 -2px 3px #FFFFFF, 0 2px 3px #FFFFFF, 0 2px 3px #FFFFFF, -2px 0 3px #FFFFFF, 2px 0 3px #FFFFFF, -2px 0 3px #FFFFFF, 2px 0 3px #FFFFFF, -1px -2px 3px #FFFFFF, 1px -2px 3px #FFFFFF, -1px 2px 3px #FFFFFF, 1px 2px 3px #FFFFFF, -2px -1px 3px #FFFFFF, 2px -1px 3px #FFFFFF, -2px 1px 3px #FFFFFF, 2px 1px 3px #FFFFFF, -2px -2px 3px #FFFFFF, 2px -2px 3px #FFFFFF, -2px 2px 3px #FFFFFF, 2px 2px 3px #FFFFFF, -2px -2px 3px #FFFFFF, 2px -2px 3px #FFFFFF, -2px 2px 3px #FFFFFF, 2px 2px 3px #FFFFFF;
 }
 
-.main .buttonFree, .buttonBlock .buttonPaid {
+.main .buttonFree, .mainQu .buttQu button[form=formPaid], .feedbackForm input[type=submit], .buttonBlock .buttonPaid {
   font-size: 20px;
   color: #fff;
   border: none;
   padding: 20px;
   background-color: #0d7b0d;
 }
-.main .buttonFree:hover, .buttonBlock .buttonPaid:hover {
+.main .buttonFree:hover, .mainQu .buttQu button[form=formPaid]:hover, .feedbackForm input[type=submit]:hover, .buttonBlock .buttonPaid:hover {
   transition: 0.5s;
   box-shadow: 0 0 15px #fff;
 }
-.main .buttonFree:active, .buttonBlock .buttonPaid:active {
+.main .buttonFree:active, .mainQu .buttQu button[form=formPaid]:active, .feedbackForm input[type=submit]:active, .buttonBlock .buttonPaid:active {
   transition: 0.1s;
   transform: scale(0.95);
 }
 
-.buttonBlock .buttonFree {
+.mainQu .buttQu button, .buttonBlock .buttonFree {
   font-size: 20px;
   color: #fff;
   border: none;
   padding: 20px;
   background-color: #ae1b1b;
 }
-.buttonBlock .buttonFree:hover {
+.mainQu .buttQu button:hover, .buttonBlock .buttonFree:hover {
   transition: 0.5s;
   box-shadow: 0 0 15px #fff;
 }
-.buttonBlock .buttonFree:active {
+.mainQu .buttQu button:active, .buttonBlock .buttonFree:active {
   transition: 0.1s;
   transform: scale(0.95);
 }
@@ -66,7 +66,7 @@
   background-attachment: fixed;
 }
 
-.mainAbout, .mainPro > p, .mainFaq > p, .mainInfo > p {
+.descQu, .mainAbout, .mainPro > p, .mainFaq > p, .mainInfo > p {
   font-size: 20px;
   line-height: 25px;
   text-align: justify;
@@ -75,6 +75,10 @@
   box-shadow: 0 0 10px grey;
 }
 
+.mainInfo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .mainInfo > p {
   margin: 30px 0;
 }
@@ -110,8 +114,9 @@
   margin-bottom: 30px;
 }
 .mainFaq {
-  max-width: 800px;
+  max-width: 1024px;
   margin: 0 auto;
+  text-align: center;
 }
 .mainFaq > p {
   margin-bottom: 50px;
@@ -122,6 +127,7 @@
 .mainFaq .quWrapper {
   display: inline-block;
   width: 80%;
+  text-align: left;
 }
 .mainFaq .quWrapper .question {
   display: block;
@@ -227,6 +233,9 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+.mainAbout hr {
+  margin: 30px 0;
+}
 .mainAbout img {
   padding: 30px;
   float: left;
@@ -244,6 +253,109 @@
   border: 1px dotted black;
   width: 200px;
   height: 200px;
+}
+
+.feedbackForm {
+  width: 70%;
+  margin: 0 auto;
+}
+.feedbackForm #ff-mail {
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  font-size: 20px;
+}
+.feedbackForm #ff-text {
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  font-style: italic;
+}
+.feedbackForm label {
+  margin-bottom: 10px;
+}
+.feedbackForm input, .feedbackForm textarea {
+  margin-bottom: 10px;
+}
+
+.mainQu {
+  max-width: 1024px;
+  margin: 30px auto;
+}
+.mainQu .buttQu {
+  clear: both;
+  text-align: center;
+  margin-top: 50px;
+}
+.mainQu .buttQu span {
+  font-size: 15px;
+  padding-left: 10px;
+  text-shadow: 0 0 10px white;
+}
+.mainQu .buttQu button {
+  margin-top: 15px;
+}
+.mainQu hr {
+  clear: both;
+  margin-top: 10px;
+}
+
+.descQu, .formQu {
+  display: inline-block;
+  width: 45%;
+  padding: 20px;
+}
+
+.descQu {
+  float: left;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.descQu p {
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.formQu {
+  float: right;
+}
+.formQu input {
+  width: 100%;
+  height: 30px;
+  padding: 5px 15px;
+  font-size: 20px;
+  border: 3px solid black;
+  margin: 10px 0 15px 0;
+}
+.formQu input:focus {
+  transition: 0.3s;
+  border-radius: 15px;
+  border-color: #ae1b1b;
+}
+.formQu textarea {
+  width: 100%;
+  font-size: 20px;
+  font-style: italic;
+  padding: 5px 15px;
+  border: 3px solid black;
+  margin-top: 10px;
+}
+.formQu textarea:focus {
+  transition: 0.3s;
+  border-radius: 15px;
+  border-color: #ae1b1b;
+}
+.formQu label {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 0 5px 10px;
+}
+
+#formPaid input:focus {
+  border-color: #0d7b0d;
+}
+#formPaid textarea:focus {
+  border-color: #0d7b0d;
 }
 
 * {

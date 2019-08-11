@@ -1,0 +1,76 @@
+.mainQu {
+  max-width: 1024px;
+  margin: 30px auto;
+  .buttQu {
+    clear: both;
+    text-align: center;
+    margin-top: 50px;
+    span {
+      font-size: 15px;
+      padding-left: 10px;
+      text-shadow: 0 0 10px white;
+    }
+    button {
+      @extend %buttonFree;
+      margin-top: 15px;
+    }
+  }
+  hr {
+    clear: both;
+    margin-top: 10px;
+  }
+}
+
+.descQu, .formQu {
+  display: inline-block;
+  width: 45%;
+  padding: 20px;
+}
+
+.descQu {
+  @extend %descBlock;
+  float: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  p {
+    margin: 10px 0;
+    text-align: justify;
+    // font-size: 20px;
+  }
+}
+
+.formQu {
+  float: right;
+  input {
+    width: 100%;
+    height: 30px;
+    padding: 5px 15px;
+    font-size: 20px;
+    border: 3px solid black;
+    margin: 10px 0 15px 0;
+    &:focus {
+      transition: 0.3s;
+      border-radius: 15px;
+      border-color: $freeColor;
+    }
+  }
+  textarea {
+    width: 100%;
+    font-size: 20px;
+    font-style: italic;
+    padding: 5px 15px;
+    border: 3px solid black;
+    margin-top: 10px;
+    &:focus {
+      transition: 0.3s;
+      border-radius: 15px;
+      border-color: $freeColor;
+    }
+  }
+  label {
+    @extend %softWhiteShadow;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 0 5px 10px;
+  }
+}
