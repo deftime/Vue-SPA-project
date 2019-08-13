@@ -3,6 +3,8 @@
   padding: 0;
 }
 
+/* ENTER PAGE */
+
 .wrapper {
   min-height: 100vh;
   background-image: url('../images/legaltech_page.jpg');
@@ -35,6 +37,10 @@
   margin: 10px 0;
 }
 
+.enter .logPass input:focus {
+  border-color: green;
+}
+
 .enter .logPass label {
   font-size: 15px;
 }
@@ -46,4 +52,21 @@
   cursor: pointer;
   background-color: #c5c5c5;
   font-weight: bold;
+}
+
+/* ADMIN PAGE */
+
+.wrapperAdmin {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filTit {
+  padding: 10px 5px;
+  margin-top: 30px;
+}
+
+table a {
+  color: inherit;
 }
