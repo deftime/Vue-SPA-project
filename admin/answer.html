@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <title>Law - ONLINE. Керування.</title>
+</head>
+<body>
+
+<div class="wrapperAdmin">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Questions Manager 0.1b</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="index.html">Logout<span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+  </nav>
+  <div class="my-5 row ansMain">
+    <div class="col-3 bor ansLeft">
+      <div class="descQu">
+        Питання, що надішло від відвідувача сайту. Орфографію та пунктуацію збережено. Текст запитання буде відправлено разом з відповідью, тож можно на нього посилатися.
+      </div>
+      <div class="descAns">
+        Форма для відповіді на питання. Після відповіді необхідно його зберегти, натиснувши відповідну кнопку, інакше текст буде втрачено! Питання буде відправлено після модерації.
+      </div>
+    </div>
+    <div class="col-6 bor ansMiddle">
+      <span>Ім'я клієнта</span><span>E-mail клієнта</span>
+      <form id="answerForm">
+      <textarea name="qu" rows="10" class="quBox" disabled>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </textarea>
+      <textarea name="ans" rows="10"></textarea>
+      <div class="buttCon row justify-content-around my-5">
+        <button class="btn btn-lg btn-success">Зберегти</button>
+        <button class="btn btn-lg btn-danger">Закрити</button>
+        <button class="btn btn-lg btn-secondary" disabled>Надіслати</button>
+      </div>
+      </form>
+    </div>
+    <div class="col-3 bor ansRight">
+      <div class="alert alert-secondary" role="alert">
+        Це звичайне питання, відповідь на нього може бути простою та загальною. Строк відповіді відсутній.
+      </div>
+      <div class="alert alert-success" role="alert">
+        УВАГА! Це <strong>Питання PRO</strong>. Відповідь на нього стає доступною тільки після отримання оплати. Відповідь має бути максимально детальною та розширенною, з посиланням на актуальні норми законодавства.
+      </div>
+      <div class="form-check">
+        <input form="answerForm" class="form-check-input" type="checkbox" value="" id="ansPaid" disabled>
+        <label class="form-check-label" for="defaultCheck2">
+          Оплату отримано
+        </label>
+      </div>
+      <div class="form-check">
+        <input form="answerForm" class="form-check-input" type="checkbox" value="" id="ansSend" disabled>
+        <label class="form-check-label" for="defaultCheck2">
+          Дозволити надсилання іншим користувачам
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -70,3 +70,46 @@
 table a {
   color: inherit;
 }
+
+/* ANSWER PAGE */
+
+.ansMain .ansMiddle {
+  padding-top: 20px;
+}
+
+.ansMain .ansMiddle textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.ansMain .ansMiddle span {
+  font-size: 25px;
+  color: grey;
+}
+
+.ansMain .ansMiddle span:first-child {
+  float: left;
+}
+
+.ansMain .ansMiddle span:nth-child(2) {
+  float: right;
+}
+
+.ansMain .ansLeft div {
+  font-size: 14px;
+  color: grey;
+  text-align: right;
+}
+
+.ansMain .ansLeft .descQu {
+  margin-top: 140px;
+}
+
+.ansMain .ansLeft .descAns {
+  margin-top: 210px;
+}
+
+.ansMain .ansRight .alert-secondary {
+  margin-top: 80px;
+}
