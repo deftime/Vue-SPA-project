@@ -17,15 +17,24 @@ body {
   font-family: $mainFont;
 }
 
-.wrapperPage {
-  @extend %wrapperPage;
-}
-
 .wrapper {
   height: 100vh;
-  background-image: url('../images/legaltech.jpg');
+}
+
+.innerWrap {
+  height: 100vh;
+  background-image: url('../images/default-lawyer.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+.page {
+  opacity: 0.3;
 }
 
 .mainMenu {
@@ -39,25 +48,30 @@ body {
       font-size: 20px;
       list-style: none;
       text-transform: uppercase;
-      margin-right: 25px;
-      &:nth-child(4):hover {
-        color: green;
-      }
+      background-color: rgba(255, 255, 255, 0.5);
     }
   }
   a {
     text-decoration: none;
     color: black;
+    display: block;
+    padding: 25px;
     &:hover {
       text-decoration: underline;
+      background-color: wheat;
     }
+  }
+  .currPage {
+    background-color: wheat;
   }
 }
 
 .main {
-  margin-top: 150px;
+  margin: 150px auto;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 30px 0;
   h1, h2, {
-    @extend %softWhiteShadow;
     text-align: center;
   }
   h1 {
@@ -68,7 +82,7 @@ body {
     font-weight: bold;
   }
   .buttonFree {
-    @extend %buttonPaid;
+    @extend %buttonFree;
     display: block;
     margin: 30px auto;
     &:hover {

@@ -22,57 +22,46 @@
   font-weight: bold;
   font-style: italic;
 }
-.main h1, .main h2, .formQu label {
-  text-shadow: 0 -2px 3px #FFFFFF, 0 -2px 3px #FFFFFF, 0 2px 3px #FFFFFF, 0 2px 3px #FFFFFF, -2px 0 3px #FFFFFF, 2px 0 3px #FFFFFF, -2px 0 3px #FFFFFF, 2px 0 3px #FFFFFF, -1px -2px 3px #FFFFFF, 1px -2px 3px #FFFFFF, -1px 2px 3px #FFFFFF, 1px 2px 3px #FFFFFF, -2px -1px 3px #FFFFFF, 2px -1px 3px #FFFFFF, -2px 1px 3px #FFFFFF, 2px 1px 3px #FFFFFF, -2px -2px 3px #FFFFFF, 2px -2px 3px #FFFFFF, -2px 2px 3px #FFFFFF, 2px 2px 3px #FFFFFF, -2px -2px 3px #FFFFFF, 2px -2px 3px #FFFFFF, -2px 2px 3px #FFFFFF, 2px 2px 3px #FFFFFF;
-}
-
-.main .buttonFree, .mainQu .buttQu button[form=formPaid], .feedbackForm input[type=submit], .buttonBlock .buttonPaid {
+.formQu .paidBut, .buttonBlock .buttonPaid {
   font-size: 20px;
   color: #fff;
   border: none;
   padding: 20px;
-  background-color: #0d7b0d;
+  background-color: #ff7207;
 }
-.main .buttonFree:hover, .mainQu .buttQu button[form=formPaid]:hover, .feedbackForm input[type=submit]:hover, .buttonBlock .buttonPaid:hover {
+.formQu .paidBut:hover, .buttonBlock .buttonPaid:hover {
   transition: 0.5s;
   box-shadow: 0 0 15px #fff;
 }
-.main .buttonFree:active, .mainQu .buttQu button[form=formPaid]:active, .feedbackForm input[type=submit]:active, .buttonBlock .buttonPaid:active {
+.formQu .paidBut:active, .buttonBlock .buttonPaid:active {
   transition: 0.1s;
   transform: scale(0.95);
 }
 
-.mainQu .buttQu button, .buttonBlock .buttonFree {
+.main .buttonFree, .formQu button, .feedbackForm input[type=submit], .buttonBlock .buttonFree {
   font-size: 20px;
   color: #fff;
   border: none;
   padding: 20px;
-  background-color: #ae1b1b;
+  background-color: #28a745;
 }
-.mainQu .buttQu button:hover, .buttonBlock .buttonFree:hover {
+.main .buttonFree:hover, .formQu button:hover, .feedbackForm input[type=submit]:hover, .buttonBlock .buttonFree:hover {
   transition: 0.5s;
   box-shadow: 0 0 15px #fff;
 }
-.mainQu .buttQu button:active, .buttonBlock .buttonFree:active {
+.main .buttonFree:active, .formQu button:active, .feedbackForm input[type=submit]:active, .buttonBlock .buttonFree:active {
   transition: 0.1s;
   transform: scale(0.95);
-}
-
-.wrapperPage {
-  min-height: 100vh;
-  background-image: url("../images/legaltech_page.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .descQu, .mainAbout, .mainPro > p, .mainFaq > p, .mainInfo > p {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 25px;
   text-align: justify;
-  padding: 10px;
+  padding: 20px;
   background-color: #fff;
-  box-shadow: 0 0 10px grey;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 10px;
 }
 
 .mainInfo {
@@ -90,12 +79,12 @@
   margin-top: 50px;
 }
 .infoGraph .block {
-  box-shadow: 0 0 30px 5px black;
+  box-shadow: 0 0 10px 5px #ccc;
   background-color: #FFF;
   width: 250px;
-  height: 330px;
   text-align: center;
   padding: 0 20px;
+  border-radius: 10px;
 }
 .infoGraph .block img {
   margin: 30px 0;
@@ -111,7 +100,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 .mainFaq {
   max-width: 1024px;
@@ -126,7 +115,7 @@
 }
 .mainFaq .quWrapper {
   display: inline-block;
-  width: 80%;
+  width: 94%;
   text-align: left;
 }
 .mainFaq .quWrapper .question {
@@ -197,7 +186,6 @@
   height: 150px;
   padding: 23px;
   border-top: 1px dotted black;
-  margin-bottom: 30px;
 }
 
 .mainPro {
@@ -210,18 +198,19 @@
   margin-top: 30px;
 }
 .mainPro .proTab table {
-  border: 3px solid black;
   border-collapse: collapse;
   background-color: #fff;
 }
 .mainPro .proTab th {
-  border: 3px solid black;
+  border: 1px solid #ccc;
   font-size: 20px;
   padding: 10px 0;
+  background-color: rgba(204, 204, 204, 0.3);
 }
 .mainPro .proTab td {
   font-size: 19px;
-  padding: 10px;
+  padding: 20px 15px;
+  border: 1px solid #ccc;
 }
 .mainPro .proTab tr > td:nth-child(2),
 .mainPro .proTab tr > td:nth-child(3) {
@@ -231,18 +220,19 @@
 
 .mainAbout {
   max-width: 1024px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 .mainAbout hr {
   margin: 30px 0;
 }
 .mainAbout img {
-  padding: 30px;
+  padding: 0 50px 30px 50px;
   float: left;
 }
 .mainAbout h2, .mainAbout h1 {
   text-align: center;
-  margin: 20px 0;
+  margin: 50px 0;
+  font-size: 30px;
 }
 .mainAbout .partners {
   margin-bottom: 20px;
@@ -282,28 +272,11 @@
   max-width: 1024px;
   margin: 30px auto;
 }
-.mainQu .buttQu {
-  clear: both;
-  text-align: center;
-  margin-top: 50px;
-}
-.mainQu .buttQu span {
-  font-size: 15px;
-  padding-left: 10px;
-  text-shadow: 0 0 10px white;
-}
-.mainQu .buttQu button {
-  margin-top: 15px;
-}
-.mainQu hr {
-  clear: both;
-  margin-top: 10px;
-}
 
 .descQu, .formQu {
   display: inline-block;
   width: 45%;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .descQu {
@@ -324,38 +297,50 @@
   height: 30px;
   padding: 5px 15px;
   font-size: 20px;
-  border: 3px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   margin: 10px 0 15px 0;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .formQu input:focus {
   transition: 0.3s;
-  border-radius: 15px;
-  border-color: #ae1b1b;
+  box-shadow: 0 0 5px 2px #28a745;
 }
 .formQu textarea {
   width: 100%;
   font-size: 20px;
   font-style: italic;
   padding: 5px 15px;
-  border: 3px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .formQu textarea:focus {
   transition: 0.3s;
-  border-radius: 15px;
-  border-color: #ae1b1b;
+  box-shadow: 0 0 5px 2px #28a745;
 }
 .formQu label {
   font-size: 20px;
-  font-weight: bold;
   padding: 0 0 5px 10px;
+}
+.formQu input[type=checkbox] {
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+}
+.formQu span {
+  font-size: 15px;
+  padding-left: 10px;
+  text-shadow: 0 0 10px white;
+}
+.formQu button {
+  margin-top: 15px;
 }
 
 #formPaid input:focus {
-  border-color: #0d7b0d;
+  box-shadow: 0 0 5px 2px #ff7207;
 }
 #formPaid textarea:focus {
-  border-color: #0d7b0d;
+  box-shadow: 0 0 5px 2px #ff7207;
 }
 
 * {
@@ -369,9 +354,22 @@ body {
 
 .wrapper {
   height: 100vh;
-  background-image: url("../images/legaltech.jpg");
+}
+
+.innerWrap {
+  height: 100vh;
+  background-image: url("../images/default-lawyer.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+.page {
+  opacity: 0.3;
 }
 
 .mainMenu {
@@ -387,21 +385,27 @@ body {
   font-size: 20px;
   list-style: none;
   text-transform: uppercase;
-  margin-right: 25px;
-}
-.mainMenu ul li:nth-child(4):hover {
-  color: green;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .mainMenu a {
   text-decoration: none;
   color: black;
+  display: block;
+  padding: 25px;
 }
 .mainMenu a:hover {
   text-decoration: underline;
+  background-color: wheat;
+}
+.mainMenu .currPage {
+  background-color: wheat;
 }
 
 .main {
-  margin-top: 150px;
+  margin: 150px auto;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 30px 0;
 }
 .main h1, .main h2 {
   text-align: center;

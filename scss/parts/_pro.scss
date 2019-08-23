@@ -15,18 +15,20 @@
   .proTab {
     margin-top: 30px;
     table {
-      border: 3px solid black;
+      // border: 3px solid black;
       border-collapse: collapse;
       background-color: #fff;
     }
     th {
-      border: 3px solid black;
+      border: 1px solid #ccc;
       font-size: 20px;
       padding: 10px 0;
+      background-color: rgba(204, 204, 204, 0.3);
     }
     td {
       font-size: 19px;
-      padding: 10px;
+      padding: 20px 15px;
+      border: 1px solid #ccc;
     }
     tr > td:nth-child(2),
     tr > td:nth-child(3) {

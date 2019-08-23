@@ -18,7 +18,7 @@
 
 .enter {
   border: 2px solid black;
-  box-shadow: 0 0 10px 10px grey;
+  box-shadow: 0 0 10px 5px #ccc;
   padding: 50px;
   width: 250px;
   background-color: #fff;

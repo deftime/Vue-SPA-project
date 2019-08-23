@@ -1,14 +1,12 @@
 #formPaid {
   input:focus {
-    border-color: $paidColor;
+    box-shadow: 0 0 5px 2px $paidColor;
   }
   textarea:focus {
-    border-color: $paidColor;
+    box-shadow: 0 0 5px 2px $paidColor;
   }
 }
 
-.mainQu .buttQu {
-  button[form="formPaid"] {
-    @extend %buttonPaid;
-  }
+.formQu .paidBut {
+  @extend %buttonPaid;
 }

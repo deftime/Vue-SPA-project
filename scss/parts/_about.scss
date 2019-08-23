@@ -1,17 +1,18 @@
 .mainAbout {
   max-width: 1024px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   @extend %descBlock;
   hr {
   margin: 30px 0;
   }
   img {
-    padding: 30px;
+    padding: 0 50px 30px 50px;
     float: left;
   }
   h2, h1 {
     text-align: center;
-    margin: 20px 0;
+    margin: 50px 0;
+    font-size: 30px;
   }
   .partners {
     margin-bottom: 20px;
@@ -41,7 +42,7 @@
     font-style: italic;
   }
   input[type="submit"] {
-    @extend %buttonPaid;
+    @extend %buttonFree;
   }
   label {
     margin-bottom: 10px;
