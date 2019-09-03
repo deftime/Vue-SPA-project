@@ -400,10 +400,13 @@ body {
 .mainMenu .currPage {
   background-color: wheat;
 }
+.mainMenu .burger {
+  display: none;
+}
 
 .main {
-  margin: 150px auto;
-  width: 50%;
+  margin: 150px auto 0 auto;
+  width: 1000px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 30px 0;
 }
@@ -428,6 +431,56 @@ body {
 .main .buttonFree:active {
   transition: 0.1s;
   transform: scale(0.95);
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+  }
+  .main h1 {
+    font-size: 35px;
+  }
+  .main h2 {
+    font-size: 20px;
+  }
+  .main .buttonFree {
+    font-size: 17px;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .mainMenu ul {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+  }
+  .mainMenu ul li {
+    font-size: 15px;
+    background: none;
+  }
+}
+@media screen and (max-width: 685px) {
+  .mainMenu {
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .mainMenu ul {
+    display: none;
+  }
+  .mainMenu .burger {
+    display: block;
+    width: 60px;
+    height: 50px;
+    margin: 5px 0;
+    cursor: pointer;
+  }
+  .mainMenu .burger hr {
+    background-color: black;
+    height: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

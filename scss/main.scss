@@ -64,11 +64,14 @@ body {
   .currPage {
     background-color: wheat;
   }
+  .burger {
+    display: none;
+  }
 }
 
 .main {
-  margin: 150px auto;
-  width: 50%;
+  margin: 150px auto 0 auto;
+  width: 1000px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 30px 0;
   h1, h2, {
@@ -95,3 +98,5 @@ body {
     }
   }
 }
+
+@import "./parts/media";
