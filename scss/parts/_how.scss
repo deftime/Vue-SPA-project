@@ -3,7 +3,7 @@
   margin: 0 auto;
   > p {
     @extend %descBlock;
-    margin: 30px 0;
+    margin: 30px 20px;
   }
 }
 
@@ -11,13 +11,14 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px 20px;
   .block {
     box-shadow: 0 0 10px 5px #ccc;
     background-color: #FFF;
     width: 250px;
     text-align: center;
     padding: 0 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     img {
       margin: 30px 0;
@@ -26,7 +27,7 @@
       margin-bottom: 20px;
     }
     p {
-      margin-bottom: 10px;
+      padding-bottom: 25px;
     }
   }
 }

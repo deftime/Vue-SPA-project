@@ -1,6 +1,7 @@
 .mainFaq {
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0 20px 20px 20px;
   text-align: center;
   > p {
     @extend %descBlock;
@@ -16,7 +17,6 @@
     .question {
       display: block;
       background-color: #fff;
-      height: 50px;
       vertical-align: middle;
       padding-left: 20px;
       font-size: 20px;
@@ -77,12 +77,27 @@
 }
 
 #check:checked ~ .quWrapper > .open,
-#check1:checked ~ .quWrapper > .open1,
-#check2:checked ~ .quWrapper > .open2,
-#check3:checked ~ .quWrapper > .open3,
+#check1:checked ~ .quWrapper > .open1 {
+  height: 60px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check2:checked ~ .quWrapper > .open2 {
+  height: 90px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check3:checked ~ .quWrapper > .open3 {
+  height: 30px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
 #check4:checked ~ .quWrapper > .open4 {
   transition: 1s;
-  height: 150px;
+  height: 120px;
   padding: 23px;
   border-top: 1px dotted black;
   // margin-bottom: 30px;

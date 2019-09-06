@@ -69,14 +69,14 @@
   margin: 0 auto;
 }
 .mainInfo > p {
-  margin: 30px 0;
+  margin: 30px 20px;
 }
 
 .infoGraph {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px 20px;
 }
 .infoGraph .block {
   box-shadow: 0 0 10px 5px #ccc;
@@ -84,6 +84,7 @@
   width: 250px;
   text-align: center;
   padding: 0 20px;
+  margin-bottom: 20px;
   border-radius: 10px;
 }
 .infoGraph .block img {
@@ -93,7 +94,7 @@
   margin-bottom: 20px;
 }
 .infoGraph .block p {
-  margin-bottom: 10px;
+  padding-bottom: 25px;
 }
 
 .buttonBlock {
@@ -105,6 +106,7 @@
 .mainFaq {
   max-width: 1024px;
   margin: 0 auto;
+  padding: 0 20px 20px 20px;
   text-align: center;
 }
 .mainFaq > p {
@@ -121,7 +123,6 @@
 .mainFaq .quWrapper .question {
   display: block;
   background-color: #fff;
-  height: 50px;
   vertical-align: middle;
   padding-left: 20px;
   font-size: 20px;
@@ -178,12 +179,27 @@
 }
 
 #check:checked ~ .quWrapper > .open,
-#check1:checked ~ .quWrapper > .open1,
-#check2:checked ~ .quWrapper > .open2,
-#check3:checked ~ .quWrapper > .open3,
+#check1:checked ~ .quWrapper > .open1 {
+  height: 60px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check2:checked ~ .quWrapper > .open2 {
+  height: 90px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check3:checked ~ .quWrapper > .open3 {
+  height: 30px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
 #check4:checked ~ .quWrapper > .open4 {
   transition: 1s;
-  height: 150px;
+  height: 120px;
   padding: 23px;
   border-top: 1px dotted black;
 }
@@ -447,6 +463,35 @@ body {
     font-size: 17px;
     padding: 15px;
   }
+
+  /* HOW IT WORKS */
+  .infoGraph img {
+    width: 60px;
+    padding: 0 10px;
+  }
+  .infoGraph .block img {
+    width: 60px;
+    padding: 0 10px;
+  }
+  .infoGraph .block h3 {
+    font-size: 15px;
+  }
+  .infoGraph .block p {
+    font-size: 12px;
+  }
+
+  /* FAQ */
+  .mainFaq .faqPlus, .mainFaq .faqMinus {
+    display: none;
+  }
+
+  #check:checked ~ .minus,
+#check1:checked ~ .minus1,
+#check2:checked ~ .minus2,
+#check3:checked ~ .minus3,
+#check4:checked ~ .minus4 {
+    display: none;
+  }
 }
 @media screen and (max-width: 840px) {
   .mainMenu ul {
@@ -458,20 +503,48 @@ body {
     font-size: 15px;
     background: none;
   }
+
+  /* HOW IT WORKS */
+  .infoGraph {
+    display: block;
+  }
+  .infoGraph .arrow {
+    display: none;
+  }
+  .infoGraph .block {
+    width: auto;
+  }
+  .infoGraph .block h3 {
+    font-size: 20px;
+  }
+  .infoGraph .block img {
+    width: 80px;
+  }
+
+  /* FAQ */
 }
 @media screen and (max-width: 685px) {
   .mainMenu {
+    display: block;
     height: 60px;
     background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    transition: 1s;
   }
   .mainMenu ul {
-    display: none;
+    background: none;
+    margin: 0;
+  }
+  .mainMenu ul li {
+    display: block;
+    background: none;
+    font-size: 20px;
   }
   .mainMenu .burger {
     display: block;
     width: 60px;
     height: 50px;
-    margin: 5px 0;
+    margin: 10px auto;
     cursor: pointer;
   }
   .mainMenu .burger hr {
@@ -480,6 +553,47 @@ body {
     border: none;
     border-radius: 5px;
     margin-top: 5px;
+  }
+
+  /* HOW IT WORKS */
+  .buttonBlock {
+    display: block;
+    margin: 30px;
+  }
+  .buttonBlock button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* FAQ */
+  .mainFaq {
+    margin-top: 20px;
+  }
+
+  #check:checked ~ .quWrapper > .open,
+#check1:checked ~ .quWrapper > .open1 {
+    height: 110px;
+    padding: 23px;
+    border-top: 1px dotted black;
+  }
+
+  #check2:checked ~ .quWrapper > .open2 {
+    height: 170px;
+    padding: 23px;
+    border-top: 1px dotted black;
+  }
+
+  #check3:checked ~ .quWrapper > .open3 {
+    height: 80px;
+    padding: 23px;
+    border-top: 1px dotted black;
+  }
+
+  #check4:checked ~ .quWrapper > .open4 {
+    transition: 1s;
+    height: 300px;
+    padding: 23px;
+    border-top: 1px dotted black;
   }
 }
 

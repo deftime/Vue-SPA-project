@@ -12,6 +12,44 @@
       padding: 15px;
     }
   }
+
+  /* HOW IT WORKS */
+
+  .infoGraph {
+    img {
+      width: 60px;
+      padding: 0 10px;
+    }
+    .block {
+      img {
+        width: 60px;
+        padding: 0 10px;
+      }
+      h3 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  /* FAQ */
+
+  .mainFaq {
+    .faqPlus, .faqMinus {
+      display: none;
+    }
+  }
+
+  #check:checked ~ .minus,
+  #check1:checked ~ .minus1,
+  #check2:checked ~ .minus2,
+  #check3:checked ~ .minus3,
+  #check4:checked ~ .minus4 {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 840px) {
@@ -26,20 +64,50 @@
       }
     }
   }
+
+  /* HOW IT WORKS */
+
+  .infoGraph {
+    display: block;
+    .arrow {
+      display: none;
+    }
+    .block {
+      width: auto;
+      h3 {
+        font-size: 20px;
+      }
+      img {
+        width: 80px;
+      }
+    }
+  }
+
+  /* FAQ */
+
 }
 
 @media screen and (max-width: 685px) {
   .mainMenu {
+    display: block;
     height: 60px;
     background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    transition: 1s;
     ul {
-      display: none;
+      background: none;
+      margin: 0;
+      li {
+        display: block;
+        background: none;
+        font-size: 20px;
+      }
     }
     .burger {
       display: block;
       width: 60px;
       height: 50px;
-      margin: 5px 0;
+      margin: 10px auto;
       cursor: pointer;
       hr {
         background-color: black;
@@ -49,5 +117,50 @@
         margin-top: 5px;
       }
     }
+  }
+
+  /* HOW IT WORKS */
+
+
+  .buttonBlock {
+    display: block;
+    margin: 30px;
+    button {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* FAQ */
+
+  .mainFaq {
+    margin-top: 20px;
+  }
+
+  #check:checked ~ .quWrapper > .open,
+  #check1:checked ~ .quWrapper > .open1 {
+    height: 110px;
+    padding: 23px;
+    border-top: 1px dotted black;
+  }
+
+  #check2:checked ~ .quWrapper > .open2 {
+    height: 170px;
+    padding: 23px;
+    border-top: 1px dotted black;
+  }
+
+  #check3:checked ~ .quWrapper > .open3 {
+    height: 80px;
+    padding: 23px;
+    border-top: 1px dotted black;
+  }
+
+  #check4:checked ~ .quWrapper > .open4 {
+    transition: 1s;
+    height: 300px;
+    padding: 23px;
+    border-top: 1px dotted black;
+    // margin-bottom: 30px;
   }
 }
