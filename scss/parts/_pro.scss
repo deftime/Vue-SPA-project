@@ -1,14 +1,11 @@
-.mainPro {
-  max-width: 1024px;
-  margin: 0 auto;
-  padding-bottom: 0.1px;
-}
-
 .buttonBlock .buttonPaid {
   @extend %buttonPaid;
 }
 
 .mainPro {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px 20px 0.1px 20px;
   > p {
     @extend %descBlock;
   }
