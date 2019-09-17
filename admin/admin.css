@@ -5,12 +5,28 @@
 
 /* ENTER PAGE */
 
-.wrapper {
-  min-height: 100vh;
-  background-image: url('../images/legaltech_page.jpg');
+.innerWrap {
+  height: 100vh;
+  background-image: url('../images/default-lawyer.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+.page {
+  opacity: 0.3;
+}
+
+.wrapper {
+  min-height: 100vh;
+  /* background-image: url('../images/default-lawyer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +85,10 @@
 
 table a {
   color: inherit;
+}
+
+.navbar-nav a {
+  font-weight: bold;
 }
 
 /* ANSWER PAGE */

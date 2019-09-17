@@ -2,19 +2,24 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+  <script src="../js/auth.js" defer></script>
   <link rel="stylesheet" href="admin.css">
   <title>Law - ONLINE. Вхід для юристів.</title>
 </head>
 <body>
 
 <div class="wrapper">
+  <div class="innerWrap page"></div>
   <div class="enter">
     <p>Вхід для юристів</p>
-    <form class="logPass" action="#" method="post">
+    <form name="logForm" class="logPass">
       <label>Login:<br>
       <input type="text" name="log" value="" required></label><br>
       <label>Password:<br>
       <input type="password" name="pass" value="" required></label><br>
+      <div id="authMsg"></div>
       <button type="submit" name="signIn">Увійти</button>
     </form>
   </div>

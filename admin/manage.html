@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+  <script src="../js/auth.js" defer></script>
   <title>Law - ONLINE. Керування.</title>
 </head>
 <body>
@@ -15,7 +18,8 @@
     <a class="navbar-brand" href="#">Questions Manager 0.1b</a>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="index.html">Logout<span class="sr-only">(current)</span></a>
+        <span class="nav-item nav-link active" id="usrInfo"></span>
+        <a class="nav-item nav-link active" href="#" id="logOut">Logout</a>
       </div>
     </div>
   </nav>
