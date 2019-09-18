@@ -353,6 +353,12 @@
   margin-top: 15px;
 }
 
+#sendMsg {
+  font-size: 15px;
+  color: #28a745;
+  text-shadow: 0 0 10px white;
+}
+
 #formPaid input:focus {
   box-shadow: 0 0 5px 2px #ff7207;
 }

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/mobilemenu.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+  <script src="../js/sendqu.js" defer></script>
   <title>Law-ONLINE - Питання Pro</title>
 </head>
 <body>
@@ -34,14 +37,15 @@
       <p>Зверніть увагу на електронну пошту! Саме на неї ви отримаєте відповідь. Вказуйте діючу пошту та перед відправкою перевірте на відсутність помилок.</p>
     </div>
     <div class="formQu">
-      <form class="formFree" id="formFree" action="#" method="post">
+      <form class="formFree" id="formFree" name="quForm">
         <label for="free-name">Ваше ім'я:</label><br>
-        <input type="text" id="free-name" name="free-name" value="" required><br>
+        <input type="text" id="free-name" name="quName" value="" required><br>
         <label for="free-mail">Ваша електронна пошта:</label><br>
-        <input type="email" id="free-mail" name="free-mail" value="" required><br>
+        <input type="email" id="free-mail" name="quMail" value="" required><br>
         <label for="free-qu">Сформуйте ваше запитання:</label><br>
-        <textarea name="free-qu" id="free-qu" rows="8" cols="55" required></textarea><br>
-        <input type="checkbox" name="qu-check" value="agree" required><span>Я погоджуюсь з Правилами та Умовами послуги</span><br>
+        <textarea name="qu" id="free-qu" rows="8" cols="55" required></textarea><br>
+        <input type="checkbox" name="quCheck" value="agree" required><span>Я погоджуюсь з Правилами та Умовами послуги</span><br>
+        <div id="sendMsg"></div>
         <button type="submit">Надіслати безкоштовне питання</button>
       </form>
     </div>
