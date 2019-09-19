@@ -40,6 +40,9 @@ function sendQu(event) {
       }
 
     })
+    .then(() => {
+      form.reset();
+    })
     .catch(error => {
       msg.innerHTML = `Виникла помилка. Спробуйте ще раз.<br>${error.message}`;
       msg.style.color = 'red';

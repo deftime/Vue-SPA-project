@@ -91,6 +91,14 @@ table a {
   font-weight: bold;
 }
 
+.blInTable {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 350px;
+  height: 30px;
+}
+
 /* ANSWER PAGE */
 
 .ansMain .ansMiddle {
