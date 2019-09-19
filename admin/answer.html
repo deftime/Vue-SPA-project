@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="admin.css">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+  <script src="../js/editqu.js" defer></script>
   <title>Law - ONLINE. Керування.</title>
 </head>
 <body>
@@ -29,8 +32,8 @@
       </div>
     </div>
     <div class="col-6 bor ansMiddle">
-      <span>Ім'я клієнта</span><span>E-mail клієнта</span>
-      <form id="answerForm">
+      <span id="clientName">Ім'я клієнта</span><span id="clientMail">E-mail клієнта</span>
+      <form id="answerForm" name="quForm">
       <textarea name="qu" rows="10" class="quBox" disabled>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </textarea>
@@ -43,10 +46,10 @@
       </form>
     </div>
     <div class="col-3 bor ansRight">
-      <div class="alert alert-secondary" role="alert">
+      <div class="alert alert-secondary" role="alert" id="simpleMsg" hidden>
         Це звичайне питання, відповідь на нього може бути простою та загальною. Строк відповіді відсутній.
       </div>
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success" role="alert" id="proMsg" hidden>
         УВАГА! Це <strong>Питання PRO</strong>. Відповідь на нього стає доступною тільки після отримання оплати. Відповідь має бути максимально детальною та розширенною, з посиланням на актуальні норми законодавства.
       </div>
       <div class="form-check">
