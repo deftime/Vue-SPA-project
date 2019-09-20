@@ -8,6 +8,7 @@
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
   <script src="../js/editqu.js" defer></script>
   <title>Law - ONLINE. Керування.</title>
 </head>
@@ -38,8 +39,9 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </textarea>
       <textarea name="ans" rows="10"></textarea>
+      <div id="rezSave"></div>
       <div class="buttCon row justify-content-around my-5">
-        <button class="btn btn-lg btn-success">Зберегти</button>
+        <button class="btn btn-lg btn-success" id="saveQu">Зберегти</button>
         <a href="manage.html" class="btn btn-lg btn-danger">Закрити</a>
         <button class="btn btn-lg btn-secondary" disabled>Надіслати</button>
       </div>
