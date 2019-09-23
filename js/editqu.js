@@ -14,19 +14,27 @@
 var db = firebase.database();
 var auth = firebase.auth();
 
-auth.onAuthStateChanged(user => {
-  if (!user) {
-    window.location.href = 'index.html';
-  }
-})
-
 let form = document.forms.quForm;
 let clientName = document.querySelector('#clientName');
 let clientMail = document.querySelector('#clientMail');
 let simpleMsg = document.querySelector('#simpleMsg');
 let proMsg = document.querySelector('#proMsg');
 let save = document.querySelector('#saveQu');
+let send = document.querySelector('#sendButt');
 let rezMsg = document.querySelector('#rezSave');
+let paidCheck = document.querySelector('#ansPaid');
+
+// Check log-in user and enable relevant permissions
+auth.onAuthStateChanged(user => {
+  if (!user) {
+    window.location.href = 'index.html';
+  } else {
+    if (auth.currentUser.email == 'deftime@gmail.com') {
+      send.disabled = false;
+      paidCheck.disabled = false;
+    }
+  }
+})
 
 // Get URL for take id of question
 let url = new URL(window.location.href);
@@ -47,8 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
           form.ans.value = objObj[key].answer;
           if (objObj[key].type == 'paid') {
             proMsg.hidden = false;
+            if (objObj[key].paidflag == true) {
+              paidCheck.checked = true;
+              form.ans.disabled = false;
+            } else {
+              paidCheck.checked = false;
+              form.ans.disabled = true;
+            }
           } else {
             simpleMsg.hidden = false;
+            document.querySelector('.form-check').hidden = true;
           }
         } else {
           continue;
@@ -75,6 +91,11 @@ save.addEventListener('click', () => {
   } else {
     upObj.answerflag = false;
   }
+  if (paidCheck.checked == true) {
+    upObj.paidflag = true;
+  } else {
+    upObj.paidflag = false;
+  }
 
   db.ref('Questions').child(id).update(upObj)
     .then(() => {
@@ -88,4 +109,12 @@ save.addEventListener('click', () => {
       setTimeout(() => {rezMsg.innerText = ''}, 2000);
       console.log(err.message);
     })
+})
+
+// Send ready question to client
+
+send.addEventListener('click', () => {
+  window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=${form.ans.value}`);
+
+  db.ref('Questions').child(id).update({sendflag: true});
 })
