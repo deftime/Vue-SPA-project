@@ -4,13 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
   <script src="./js/global.js" defer></script>
   <script src="./js/mobilemenu.js" defer></script>
+  <script src="./js/routing.js" defer></script>
   <title>Юридична допомога ONLINE</title>
 </head>
 <body>
 
-<div class="wrapper">
+<div class="wrapper" id="vueblock">
   <div class="innerWrap"></div>
   <nav class="mainMenu">
     <div class="burger">
@@ -19,19 +24,25 @@
       <hr>
     </div>
     <ul>
-      <li><a href="index.html">Головна</a></li><li>
+      <li class="mainP"><router-link to="/">Головна</router-link></li><li class="otherP">
+      <router-link to="/how">Як це працює?</router-link></li><li class="otherP">
+      <router-link to="/faq"class="otherP">FAQ</router-link></li><li class="otherP">
+      <router-link to="/pro"class="otherP">Питання PRO</router-link></li><li class="otherP">
+      <router-link to="/about"class="otherP">Хто ми?</router-link></li>
+      <!-- <li><a href="index.html">Головна</a></li><li>
       <a href="./pages/how-it-works.html">Як це працює?</a></li><li>
       <a href="./pages/faq.html">FAQ</a></li><li>
       <a href="./pages/pro.html">Питання Pro</a></li><li>
-      <a href="./pages/about.html">Хто ми?</a></li>
+      <a href="./pages/about.html">Хто ми?</a></li> -->
     </ul>
 
   </nav>
-  <div class="main">
+  <router-view></router-view>
+  <!-- <div class="main">
     <h1>Юридична ONLINE-консультація</h1>
     <h2>Відправ своє запитання та отримай відповідь на пошту!</h2>
     <button class="buttonFree">Задати безкоштовне питання</button>
-  </div>
+  </div> -->
 </div>
 
 </body>
