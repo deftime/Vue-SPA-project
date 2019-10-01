@@ -32,13 +32,42 @@ db.ref('Pages').once('value')
     paidPage = snap.val().paid;
   })
   .then(() => {
+
     // Components (target page) of routing
-    var how = { template: howPage };
+    var how = { template: howPage,
+      methods: {
+        buttLinks: function(event) {
+          if (event.target.classList.contains('buttonFree')) {
+            window.location.href = '#/free';
+          } else {
+            window.location.href = '#/paid';
+          }
+        }
+      }};
     var faq = { template: faqPage };
-    var pro = { template: proPage };
+    var pro = { template: proPage,
+      methods: {
+        buttLinks: function(event) {
+          if (event.target.classList.contains('buttonFree')) {
+            window.location.href = '#/free';
+          } else {
+            window.location.href = '#/paid';
+          }
+        }
+      } };
     var about = { template: aboutPage };
-    var main = { template: mainPage };
+    var main = { template: mainPage,
+      methods: {
+        buttLinks: function(event) {
+          if (event.target.classList.contains('buttonFree')) {
+            window.location.href = '#/free';
+          } else {
+            window.location.href = '#/paid';
+          }
+        }
+      }};
     var free = { template: freePage };
+    var paid = { template: paidPage };
 
     // Routes
     const routes = [
@@ -47,6 +76,7 @@ db.ref('Pages').once('value')
       { path: '/pro', component: pro },
       { path: '/about', component: about },
       { path: '/free', component: free },
+      { path: '/paid', component: paid },
       { path: '', component: main }
     ]
 
@@ -57,6 +87,7 @@ db.ref('Pages').once('value')
     new Vue({
       router
     }).$mount('#vueblock')
+
   })
   .catch(err => {
     console.log('НЕ удалось получить данные с базы: ' + err.message);
