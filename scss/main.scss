@@ -99,4 +99,8 @@ body {
   }
 }
 
+.router-link-exact-active {
+  background-color: wheat;
+}
+
 @import "./parts/media";

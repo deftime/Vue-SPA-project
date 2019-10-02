@@ -33,7 +33,7 @@ db.ref('Pages').once('value')
   })
   .then(() => {
 
-    // Components (target page) of routing
+    // Templates (target pages) of routing and methods inside this templates
     var how = { template: howPage,
       methods: {
         buttLinks: function(event) {
@@ -61,6 +61,8 @@ db.ref('Pages').once('value')
     var main = { template: mainPage,
       methods: {
         buttLinks: function(event) {
+          document.querySelector('.innerWrap').style.opacity = 0.3;
+
           if (event.target.classList.contains('buttonFree')) {
             window.location.href = '#/free';
           } else {
@@ -181,8 +183,32 @@ db.ref('Pages').once('value')
       routes
     });
 
+    // Vue-instance ONLY for index page WITHOUT templates
     new Vue({
-      router
+      router,
+      methods: {
+        changeBg: function (event) {
+          let pageBack = document.querySelector('.innerWrap');
+          let open = document.querySelector('.mainMenu');
+
+          if (event.currentTarget.classList.contains('mainP')) {
+            pageBack.style.opacity = 1;
+          } else {
+            pageBack.style.opacity = 0.3;
+          }
+
+          open.style.height = '';
+        },
+        mobilemenu: function(event) {
+          let open = document.querySelector('.mainMenu');
+
+          if (open.style.height) {
+            open.style.height = '';
+          } else {
+            open.style.height = '450px';
+          }
+        }
+      }
     }).$mount('#vueblock')
 
   })

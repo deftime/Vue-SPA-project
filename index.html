@@ -17,17 +17,17 @@
 <div class="wrapper" id="vueblock">
   <div class="innerWrap"></div>
   <nav class="mainMenu">
-    <div class="burger">
+    <div class="burger" @click="mobilemenu">
       <hr>
       <hr>
       <hr>
     </div>
     <ul>
-      <li class="mainP"><router-link to="/">Головна</router-link></li><li class="otherP">
-      <router-link to="/how">Як це працює?</router-link></li><li class="otherP">
-      <router-link to="/faq"class="otherP">FAQ</router-link></li><li class="otherP">
-      <router-link to="/pro"class="otherP">Питання PRO</router-link></li><li class="otherP">
-      <router-link to="/about"class="otherP">Хто ми?</router-link></li>
+      <li class="mainP" @click="changeBg"><router-link to="/">Головна</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/how">Як це працює?</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/faq">FAQ</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/pro">Питання PRO</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/about">Хто ми?</router-link></li>
       <!-- <li><a href="index.html">Головна</a></li><li>
       <a href="./pages/how-it-works.html">Як це працює?</a></li><li>
       <a href="./pages/faq.html">FAQ</a></li><li>
