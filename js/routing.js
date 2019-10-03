@@ -11,6 +11,10 @@
   firebase.initializeApp(firebaseConfig);
 })();
 
+window.onload = function() {
+  window.location.href = '#/';
+}
+
 var db = firebase.database();
 
 let howPage;
@@ -215,19 +219,3 @@ db.ref('Pages').once('value')
   .catch(err => {
     console.log('НЕ удалось получить данные с базы: ' + err.message);
 })
-
-// Events for change backgrounds
-
-let pageBack = document.querySelector('.innerWrap');
-let mainBack = document.querySelector('.mainP');
-let otherBack = document.querySelectorAll('.otherP');
-
-mainBack.addEventListener('click', () => {
-  pageBack.style.opacity = 1;
-})
-
-for (let key of otherBack) {
-  key.addEventListener('click', () => {
-    pageBack.style.opacity = 0.3;
-  })
-}

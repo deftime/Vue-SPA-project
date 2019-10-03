@@ -381,6 +381,7 @@ body {
 }
 
 .innerWrap {
+  transition: 1s;
   height: 100vh;
   background-image: url("../images/default-lawyer.jpg");
   background-repeat: no-repeat;
@@ -457,8 +458,18 @@ body {
   transform: scale(0.95);
 }
 
-.router-link-exact-active {
+.activeLink {
   background-color: wheat;
+}
+
+.rout-leave-active,
+.rout-enter-active {
+  transition: 1s;
+}
+
+.rout-enter,
+.rout-leave-to {
+  opacity: 0;
 }
 
 @media screen and (max-width: 1000px) {

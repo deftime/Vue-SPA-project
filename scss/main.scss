@@ -22,6 +22,7 @@ body {
 }
 
 .innerWrap {
+  transition: 1s;
   height: 100vh;
   background-image: url('../images/default-lawyer.jpg');
   background-repeat: no-repeat;
@@ -99,8 +100,20 @@ body {
   }
 }
 
-.router-link-exact-active {
+// Color for menu-title of active page
+.activeLink {
   background-color: wheat;
+}
+
+// Animation of Vue-routing
+.rout-leave-active,
+.rout-enter-active {
+  transition: 1s;
+}
+
+.rout-enter,
+.rout-leave-to {
+  opacity: 0;
 }
 
 @import "./parts/media";

@@ -11,6 +11,19 @@
   <script src="./js/mobilemenu.js" defer></script>
   <script src="./js/routing.js" defer></script>
   <title>Юридична допомога ONLINE</title>
+
+  <style>
+    .rout-leave-active,
+    .rout-enter-active {
+      transition: 1s;
+    }
+
+    .rout-enter,
+    .rout-leave-to {
+      opacity: 0;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -24,10 +37,10 @@
     </div>
     <ul>
       <li class="mainP" @click="changeBg"><router-link to="/">Головна</router-link></li><li class="otherP" @click="changeBg">
-      <router-link to="/how">Як це працює?</router-link></li><li class="otherP" @click="changeBg">
-      <router-link to="/faq">FAQ</router-link></li><li class="otherP" @click="changeBg">
-      <router-link to="/pro">Питання PRO</router-link></li><li class="otherP" @click="changeBg">
-      <router-link to="/about">Хто ми?</router-link></li>
+      <router-link to="/how" active-class="activeLink">Як це працює?</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/faq" active-class="activeLink">FAQ</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/pro" active-class="activeLink">Питання PRO</router-link></li><li class="otherP" @click="changeBg">
+      <router-link to="/about" active-class="activeLink">Хто ми?</router-link></li>
       <!-- <li><a href="index.html">Головна</a></li><li>
       <a href="./pages/how-it-works.html">Як це працює?</a></li><li>
       <a href="./pages/faq.html">FAQ</a></li><li>
@@ -36,7 +49,9 @@
     </ul>
 
   </nav>
+  <transition name="rout" mode="out-in">
   <router-view></router-view>
+  </transition>
   <!-- <div class="main">
     <h1>Юридична ONLINE-консультація</h1>
     <h2>Відправ своє запитання та отримай відповідь на пошту!</h2>
