@@ -50,5 +50,14 @@
   }
   input, textarea {
     margin-bottom: 10px;
+    resize: none;
   }
+}
+
+// Style for message above Send buttonFree
+
+#okLine {
+  color: green;
+  font-size: 15px;
+  margin-bottom: 10px;
 }

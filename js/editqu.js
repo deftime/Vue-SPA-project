@@ -41,7 +41,6 @@ let url = new URL(window.location.href);
 let id = url.search.slice(4);
 
 // Take question from base
-
 document.addEventListener('DOMContentLoaded', () => {
   let objObj;
   db.ref('Questions').once('value')
@@ -77,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Save answer to base
-
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 })
@@ -112,9 +110,34 @@ save.addEventListener('click', () => {
 })
 
 // Send ready question to client
-
 send.addEventListener('click', () => {
-  window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=${form.ans.value}`);
+  // window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=${form.ans.value}`);
+
+  let toClientSend = {
+    from: 'info@justa.com.ua',
+    to: [clientMail.innerText],
+    subject: 'Відповідь на Ваше питання',
+    html_body: `<p><strong>Доброго дня, вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p><p>Ми підготували відповідь на ваше питання, яке ви відправили нам через сайт наших партнерів. Майте на увазі, що це коротка первинна загальна відповідь, яка сформована на основі ваших слів. Для отримання більш детальної консультації - будь ласка зверніться до нашого офісу з усіма необхідними документами та максимально детальним обсягом інформації про вашу ситуацію.</p><p><em><strong>Ваше питання:</strong></em></p><p></p>${form.qu.value}<p><em><strong>Відповідь:</strong></em></p><p>${form.ans.value}</p>`
+  }
+
+  fetch('http://api.mailhandler.ru/message/send/', {
+    method: 'POST',
+    headers: {
+      'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(toClientSend)
+  }).then(resp => {
+    console.log(resp.status);
+    rezMsg.innerText = 'Відповідь надіслано!';
+    rezMsg.style.color = 'green';
+    setTimeout(() => {rezMsg.innerText = ''}, 2000);
+  }).catch(err => {
+    console.log(err.message);
+    rezMsg.innerText = 'Надіслати не вдалося!';
+    rezMsg.style.color = 'red';
+  })
 
   db.ref('Questions').child(id).update({sendflag: true});
 })

@@ -37,11 +37,12 @@
     </div>
     <hr>
     <h2>Зв'язатися з нами</h2>
-    <form class="feedbackForm" action="index.html" method="post">
+    <form class="feedbackForm" name="formMsg" v-on:submit="sendMsg">
       <label for="ff-mail">Ваш E-Mail:</label><br>
-      <input type="email" id="ff-mail" name="ff-mail"><br>
+      <input type="email" id="ff-mail" name="ffmail" required><br>
       <label for="ff-text">Ваше повідомлення:</label><br>
-      <textarea name="ff-text" id="ff-text" rows="8" cols="80"></textarea><br>
+      <textarea name="fftext" id="ff-text" rows="8" cols="80" required></textarea><br>
+      <div id="okLine"></div>
       <input type="submit" name="ff-button" value="Надсілати">
     </form>
   </div>

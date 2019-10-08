@@ -61,7 +61,41 @@ db.ref('Pages').once('value')
         }
       }
     };
-    var about = { template: aboutPage };
+    var about = { template: aboutPage,
+      methods: {
+        sendMsg: function (event) {
+          event.preventDefault();
+          let email = document.forms.formMsg.elements.ffmail.value;
+          let msg = document.forms.formMsg.elements.fftext.value;
+
+          let sendObj = {
+            from: 'info@justa.com.ua',
+            to: ['deftime@gmail.com'],
+            subject: 'Повідомлення зі сторінки Контактів',
+            html_body: `<p>Повідомлення з сайту Онлайн-допомоги</p><p>Від: ${email}</p><hr><p>${msg}</p>`
+          }
+
+          fetch('http://api.mailhandler.ru/message/send/', {
+            method: 'POST',
+            headers: {
+              'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sendObj)
+          }).then(response => {
+            console.log(response.status);
+            document.querySelector('#okLine').innerHTML = `Ваше повідомлення надіслано!`;
+          }).then(() => {
+            document.forms.formMsg.reset();
+          }).catch(error => {
+            document.querySelector('#okLine').innerHTML = `Надіслати не вдалося!`;
+            document.querySelector('#okLine').style.color = 'red';
+            console.log(error.message);
+          })
+        }
+      }
+     };
     var main = { template: mainPage,
       methods: {
         buttLinks: function(event) {

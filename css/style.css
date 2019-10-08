@@ -283,6 +283,13 @@
 }
 .feedbackForm input, .feedbackForm textarea {
   margin-bottom: 10px;
+  resize: none;
+}
+
+#okLine {
+  color: green;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 
 .mainQu {
@@ -294,7 +301,7 @@
 .descQu, .formQu {
   display: inline-block;
   width: 45%;
-  padding: 0 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .descQu {
@@ -318,6 +325,7 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
   margin: 10px 0 15px 0;
   background-color: rgba(255, 255, 255, 0.8);
+  outline: none;
 }
 .formQu input:focus {
   transition: 0.3s;
@@ -331,6 +339,8 @@
   border: 1px solid rgba(255, 255, 255, 0.8);
   margin-top: 10px;
   background-color: rgba(255, 255, 255, 0.8);
+  resize: none;
+  outline: none;
 }
 .formQu textarea:focus {
   transition: 0.3s;
