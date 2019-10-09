@@ -14,6 +14,7 @@ function buildList() {
   let objObj;
   db.ref('Questions').once('value')
     .then(snap => {
+      document.querySelector('#preloader').hidden = true;
       objObj = snap.val();
       let counter = 0;
       for (let key in objObj) {

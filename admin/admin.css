@@ -99,6 +99,14 @@ table a {
   height: 30px;
 }
 
+#preloader > td > .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+
+
 /* ANSWER PAGE */
 
 .ansMain .ansMiddle {
@@ -130,11 +138,11 @@ table a {
   text-align: right;
 }
 
-.ansMain .ansLeft .descQu {
+.ansMain .ansLeft .desQu {
   margin-top: 140px;
 }
 
-.ansMain .ansLeft .descAns {
+.ansMain .ansLeft .desAns {
   margin-top: 210px;
 }
 
@@ -144,4 +152,14 @@ table a {
 
 .ansMain .ansRight .alert-success {
   margin-top: 80px;
+}
+
+.loadWrap {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  opacity: 0.3;
+  z-index: 1;
+  left: 0;
 }

@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let objObj;
   db.ref('Questions').once('value')
     .then(snap => {
+      document.querySelector('.loadWrap').hidden = true;
       objObj = snap.val();
       for (let key in objObj) {
         if (key == id) {

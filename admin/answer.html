@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
@@ -15,6 +16,9 @@
 <body>
 
 <div class="wrapperAdmin">
+  <div class="loadWrap">
+    <div class="loader"></div>
+  </div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Questions Manager 0.1b</a>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -25,18 +29,18 @@
   </nav>
   <div class="my-5 row ansMain">
     <div class="col-3 bor ansLeft">
-      <div class="descQu">
+      <div class="desQu">
         Питання, що надішло від відвідувача сайту. Орфографію та пунктуацію збережено. Текст запитання буде відправлено разом з відповідью, тож можно на нього посилатися.
       </div>
-      <div class="descAns">
+      <div class="desAns">
         Форма для відповіді на питання. Після відповіді необхідно його зберегти, натиснувши відповідну кнопку, інакше текст буде втрачено! Питання буде відправлено після модерації.
       </div>
     </div>
     <div class="col-6 bor ansMiddle">
-      <span id="clientName">Ім'я клієнта</span><span id="clientMail">E-mail клієнта</span>
+      <span id="clientName">&nbsp;</span><span id="clientMail">&nbsp;</span>
       <form id="answerForm" name="quForm">
       <textarea name="qu" rows="10" class="quBox" disabled>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
       </textarea>
       <textarea name="ans" rows="10"></textarea>
       <div id="rezSave"></div>

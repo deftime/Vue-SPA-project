@@ -7,6 +7,9 @@
 @import "./parts/about";
 @import "./parts/free";
 @import "./parts/paid";
+@import "./preloader/animations";
+@import "./preloader/variables";
+@import "./preloader/loader07";
 
 * {
   margin: 0;
@@ -114,6 +117,11 @@ body {
 .rout-enter,
 .rout-leave-to {
   opacity: 0;
+}
+
+// Preloader admin-page
+.loader {
+  @include loader07($size: 20px, $align: middle, $color: #c5c5c5);
 }
 
 @import "./parts/media";
