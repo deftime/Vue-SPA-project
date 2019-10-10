@@ -36,7 +36,7 @@ db.ref('Pages').once('value')
     paidPage = snap.val().paid;
   })
   .then(() => {
-
+    document.querySelector('.mainMenu').style.display = 'flex';
     // Templates (target pages) of routing and methods inside this templates
     var how = { template: howPage,
       methods: {

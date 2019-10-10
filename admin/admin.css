@@ -105,6 +105,11 @@ table a {
   left: 50%;
 }
 
+form[name=filterForm] {
+  display: flex;
+  width: 100%;
+}
+
 
 
 /* ANSWER PAGE */

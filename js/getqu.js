@@ -14,7 +14,7 @@ function buildList() {
   let objObj;
   db.ref('Questions').once('value')
     .then(snap => {
-      document.querySelector('#preloader').hidden = true;
+      document.querySelector('#preloader').remove();
       objObj = snap.val();
       let counter = 0;
       for (let key in objObj) {
@@ -93,4 +93,39 @@ function createRow(num, title, type, answer, send, author, date, id) {
 function editQu(event) {
   let attrQuId = this.getAttribute('quid');
   window.location.href = 'answer.html' + '?id=' + attrQuId;
+}
+
+// Filters
+
+let filterForm = document.forms.filterForm;
+let tabForFilter = document.getElementsByTagName('tr');
+
+
+filterForm.addEventListener('change', sortList);
+
+function sortList(event) {
+  let curr = event.target.value;
+  let filterId;
+
+  if (event.target.name == 'ansFilter') {
+    filterId = 3;
+  } else if (event.target.name == 'typeFilter') {
+    filterId = 2;
+  } else {
+    filterId = 4;
+  }
+
+  for (let key of tabForFilter) {
+    // console.log(key.children[1].innerText);
+    if (key.children[filterId].innerText == curr || key == document.querySelector('.thead-light > tr') || curr == 'all') {
+      key.hidden = false;
+    } else {
+      key.hidden = true;
+      for (let key of filterForm.elements) {
+        if (key.name != event.target.name) {
+          key.value = 'all';
+        }
+      }
+    }
+  }
 }

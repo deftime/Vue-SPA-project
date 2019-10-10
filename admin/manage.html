@@ -28,28 +28,29 @@
   </nav>
   <div class="filTit">Сортування списку питань:</div>
   <div class="row">
-    <div class="col-2">
-    <select class="form-control form-control-sm">
-      <option>Фільтр...</option>
-      <option>Є відповідь</option>
-      <option>Немає відповіді</option>
-    </select>
-    </div>
-    <div class="col-2">
-    <select class="form-control form-control-sm">
-      <option>Фільтр...</option>
-      <option>Звичайне</option>
-      <option>PRO</option>
-    </select>
-    </div>
-    <div class="col-2">
-    <select class="form-control form-control-sm">
-      <option>Фільтр...</option>
-      <option>Надіслано</option>
-      <option>НЕ надіслано</option>
-    </select>
-    </div>
-    <!-- <button class="btn btn-lg btn-success create">Зберегти</button> -->
+    <form name="filterForm">
+      <div class="col-2">
+      <select class="form-control form-control-sm" name="ansFilter">
+        <option value="all">Усі</option>
+        <option value="Так">Є відповідь</option>
+        <option value="Ні">Немає відповіді</option>
+      </select>
+      </div>
+      <div class="col-2">
+      <select class="form-control form-control-sm" name="typeFilter">
+        <option value="all">Усі</option>
+        <option value="Звичайне">Звичайне</option>
+        <option value="PRO">PRO</option>
+      </select>
+      </div>
+      <div class="col-2">
+      <select class="form-control form-control-sm" name="sendFilter">
+        <option value="all">Усі</option>
+        <option value="Відправлено">Надіслано</option>
+        <option value="Ні">НЕ надіслано</option>
+      </select>
+      </div>
+    </form>
   </div>
   <table class="my-4 table table-hover">
   <thead class="thead-light">
