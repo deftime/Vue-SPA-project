@@ -42,10 +42,10 @@ body {
 }
 
 .mainMenu {
-  display: none;
+  display: flex;
   justify-content: center;
   ul {
-    display: inline-block;
+    display: none;
     margin: 30px 0;
     li {
       display: inline-block;
