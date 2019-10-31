@@ -1,0 +1,47 @@
+.mainInfo {
+  max-width: 1200px;
+  margin: 0 auto;
+  > p {
+    @extend %descBlock;
+    margin: 30px 20px;
+  }
+}
+
+.infoGraph {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px 20px;
+  .block {
+    box-shadow: 0 0 10px 5px #ccc;
+    background-color: #FFF;
+    width: 250px;
+    height: 365px;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    img {
+      margin: 30px 0;
+    }
+    h3 {
+      margin-bottom: 20px;
+    }
+    p {
+      padding-bottom: 25px;
+    }
+  }
+}
+
+.buttonBlock {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  .buttonFree {
+    @extend %buttonFree;
+  }
+  .buttonPaid {
+    @extend %buttonPaid;
+  }
+}

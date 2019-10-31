@@ -1,0 +1,133 @@
+@import "./fonts/fonts";
+@import "./vars/global";
+@import "./templates/general";
+@import "./parts/how";
+@import "./parts/faq";
+@import "./parts/pro";
+@import "./parts/about";
+@import "./parts/free";
+@import "./parts/paid";
+@import "./preloader/animations";
+@import "./preloader/variables";
+@import "./preloader/loader07";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $mainFont;
+}
+
+.wrapper {
+  height: 100vh;
+}
+
+.innerWrap {
+  transition: 1s;
+  height: 100vh;
+  background-image: url('./images/default-lawyer.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+.page {
+  opacity: 0.3;
+}
+
+.mainMenu {
+  display: flex;
+  justify-content: center;
+  ul {
+    display: inline-block;
+    margin: 30px 0;
+    li {
+      display: inline-block;
+      font-size: 20px;
+      list-style: none;
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 25px;
+    &:hover {
+      text-decoration: underline;
+      background-color: wheat;
+    }
+  }
+  .currPage {
+    background-color: wheat;
+  }
+  .burger {
+    display: none;
+  }
+}
+
+.main {
+  margin: 110px auto 0 auto;
+  width: 1000px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 30px 0;
+  h1, h2, {
+    text-align: center;
+  }
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  .buttonFree {
+    @extend %buttonFree;
+    display: block;
+    margin: 30px auto;
+    &:hover {
+      transition: 0.5s;
+      box-shadow: 0 0 15px #fff;
+    }
+    &:active {
+      transition: 0.1s;
+      transform: scale(0.95);
+    }
+  }
+}
+
+// Color for menu-title of active page
+.activeLink {
+  background-color: wheat;
+}
+
+// Animation of Vue-routing
+.rout-leave-active,
+.rout-enter-active {
+  transition: 1s;
+}
+
+.rout-enter,
+.rout-leave-to {
+  opacity: 0;
+}
+
+// Preloader admin-page
+.loader {
+  @include loader07($size: 20px, $align: middle, $color: #c5c5c5);
+}
+.loader-mini {
+  @include loader07($size: 5px, $align: middle, $color: grey);
+  display: none;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+@import "./parts/media";
