@@ -1,6 +1,7 @@
 <template>
   <div class="paid mainQu">
     <div class="descQu">
+      <h3>Умови Послуги PRO</h3>
       <p>На цій сторінці ви можете скористатися послугою <strong style="color: green">Питання PRO</strong> та надіслати пріоритетне юридичне запитання.</p>
       <p>На пріоритетне запитання Ви <strong>гарантовано</strong> отримаєте <strong>розширену</strong> відповідь <strong>найближчим часом</strong> від <strong>досвідченого юриста</strong>.</p>
       <p>Усі <strong style="color: green">Питання PRO</strong> обробляються поза чергою.</p>
@@ -16,7 +17,7 @@
         <input type="email" id="free-mail" name="quMail" value="" required><br>
         <label for="free-qu">Сформуйте ваше запитання:</label><br>
         <textarea name="qu" id="free-qu" rows="8" cols="55" required></textarea><br>
-        <input type="checkbox" name="quCheck" value="agree" required><span>Я погоджуюсь з Правилами та Умовами послуги</span><br>
+        <input type="checkbox" name="quCheck" value="agree" required><span>Я погоджуюсь з Умовами послуги PRO</span><br>
         <div id="sendMsg"></div>
         <button type="submit" class="paidBut">Надіслати питання PRO</button><div class="loader-mini"></div>
       </form>

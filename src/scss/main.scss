@@ -91,7 +91,8 @@ body {
   .buttonFree {
     @extend %buttonFree;
     display: block;
-    margin: 30px auto;
+    width: 320px;
+    // margin: 30px auto;
     &:hover {
       transition: 0.5s;
       box-shadow: 0 0 15px #fff;
@@ -100,6 +101,10 @@ body {
       transition: 0.1s;
       transform: scale(0.95);
     }
+  }
+  .buttonPaid {
+    @extend %buttonPaid;
+    width: 320px;
   }
 }
 
