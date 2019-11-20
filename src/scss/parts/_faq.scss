@@ -1,0 +1,105 @@
+.mainFaq {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px 30px 20px;
+  text-align: center;
+  > p {
+    @extend %descBlock;
+    margin-bottom: 50px;
+  }
+  .faqQu {
+    margin-top: 15px;
+  }
+  .quWrapper {
+    display: inline-block;
+    width: 94%;
+    text-align: left;
+    .question {
+      display: block;
+      background-color: #fff;
+      vertical-align: middle;
+      padding-left: 20px;
+      font-size: 20px;
+      line-height: 50px;
+      border-left: 3px solid black;
+      box-shadow: 5px -5px 10px gray;
+      cursor: pointer;
+    }
+    .ask {
+      line-height: 30px;
+      text-align: justify;
+      background-color: #fff;
+      box-shadow: 15px -4px 10px -10px gray;
+      // OC-logic-default
+      transition: 0.5s;
+      height: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+  .faqPlus, .faqMinus {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: top;
+    cursor: pointer;
+    margin: 5px;
+  }
+  .faqPlus {
+    background-image: url('./images/plus.png');
+  }
+  .faqMinus {
+    background-image: url('./images/minus.png');
+    // OC-logic-default
+    display: none;
+  }
+}
+
+#check, #check1, #check2, #check3, #check4 {
+  display: none;
+}
+
+#check:checked ~ .plus,
+#check1:checked ~ .plus1,
+#check2:checked ~ .plus2,
+#check3:checked ~ .plus3,
+#check4:checked ~ .plus4 {
+  display: none;
+}
+
+#check:checked ~ .minus,
+#check1:checked ~ .minus1,
+#check2:checked ~ .minus2,
+#check3:checked ~ .minus3,
+#check4:checked ~ .minus4 {
+  display: inline-block;
+}
+
+#check:checked ~ .quWrapper > .open,
+#check1:checked ~ .quWrapper > .open1 {
+  height: 60px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check2:checked ~ .quWrapper > .open2 {
+  height: 90px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check3:checked ~ .quWrapper > .open3 {
+  height: 30px;
+  padding: 23px;
+  border-top: 1px dotted black;
+}
+
+#check4:checked ~ .quWrapper > .open4 {
+  transition: 1s;
+  height: 120px;
+  padding: 23px;
+  border-top: 1px dotted black;
+  // margin-bottom: 30px;
+}

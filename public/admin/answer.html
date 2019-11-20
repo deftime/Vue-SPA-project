@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <script src="../bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+  <script src="../js/editqu.js" defer></script>
+  <title>Law - ONLINE. Керування.</title>
+</head>
+<body>
+
+<div class="wrapperAdmin">
+  <div class="loadWrap">
+    <div class="loader"></div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Questions Manager 0.1b</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="index.html">Logout<span class="sr-only">(current)</span></a>
+      </div>
+    </div>
+  </nav>
+  <div class="my-5 row ansMain">
+    <div class="col-3 bor ansLeft">
+      <div class="desQu">
+        Питання, що надішло від відвідувача сайту. Орфографію та пунктуацію збережено. Текст запитання буде відправлено разом з відповідью, тож можно на нього посилатися.
+      </div>
+      <div class="desAns">
+        Форма для відповіді на питання. Після відповіді необхідно його зберегти, натиснувши відповідну кнопку, інакше текст буде втрачено! Питання буде відправлено після модерації.
+      </div>
+    </div>
+    <div class="col-6 bor ansMiddle">
+      <span id="clientName">&nbsp;</span><span id="clientMail">&nbsp;</span>
+      <form id="answerForm" name="quForm">
+      <textarea name="qu" rows="10" class="quBox" disabled>
+
+      </textarea>
+      <textarea name="ans" rows="10"></textarea>
+      <div id="rezSave"></div>
+      <div class="buttCon row justify-content-around my-5">
+        <button class="btn btn-lg btn-success" id="saveQu">Зберегти</button>
+        <a href="manage.html" class="btn btn-lg btn-danger">Закрити</a>
+        <button class="btn btn-lg btn-secondary" disabled id="sendButt">Надіслати</button>
+      </div>
+      </form>
+    </div>
+    <div class="col-3 bor ansRight">
+      <div class="alert alert-secondary" role="alert" id="simpleMsg" hidden>
+        Це звичайне питання, відповідь на нього може бути простою та загальною. Строк відповіді відсутній.
+      </div>
+      <div class="alert alert-success" role="alert" id="proMsg" hidden>
+        УВАГА! Це <strong>Питання PRO</strong>. Відповідь на нього стає доступною тільки після отримання оплати. Відповідь має бути максимально детальною та розширенною, з посиланням на актуальні норми законодавства.
+      </div>
+      <div class="form-check">
+        <input form="answerForm" class="form-check-input" type="checkbox" value="" id="ansPaid" disabled>
+        <label class="form-check-label" for="defaultCheck2">
+          Оплату отримано
+        </label>
+      </div>
+      <div class="form-check">
+        <!-- <input form="answerForm" class="form-check-input" type="checkbox" value="" id="ansSend" disabled>
+        <label class="form-check-label" for="defaultCheck2">
+          Дозволити надсилання іншим користувачам
+        </label> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
