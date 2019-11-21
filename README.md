@@ -1,4 +1,4 @@
-# study-project
+В этой ветке находятся версии файлов, который могут быть в разрабтке и содержать изминения, который еще не были запущены в релиз.
 
 ## Project setup
 ```
@@ -14,6 +14,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

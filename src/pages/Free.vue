@@ -9,13 +9,13 @@
       <p>Зверніть увагу на електронну пошту! Саме на неї ви отримаєте відповідь. Вказуйте діючу пошту та перед відправкою перевірте на відсутність помилок.</p>
     </div>
     <div class="formQu">
-      <form class="formFree" id="formFree" name="quForm" @submit="sendQu">
+      <form class="formFree" id="formFree" name="quForm" @submit.prevent="sendQu">
         <label for="free-name">Ваше ім'я:</label><br>
-        <input type="text" id="free-name" name="quName" value="" required><br>
+        <input type="text" id="free-name" name="quName" value="" required maxlength="30"><br>
         <label for="free-mail">Ваша електронна пошта:</label><br>
         <input type="email" id="free-mail" name="quMail" value="" required><br>
         <label for="free-qu">Сформуйте ваше запитання:</label><br>
-        <textarea name="qu" id="free-qu" rows="8" cols="55" required></textarea><br>
+        <textarea name="qu" id="free-qu" rows="8" cols="55" required maxlength="1000" minlength="30"></textarea><br>
         <input type="checkbox" name="quCheck" value="agree" required><span>Я погоджуюсь з Умовами послуги</span><br>
         <div id="sendMsg"></div>
         <button type="submit">Надіслати безкоштовне питання</button><div class="loader-mini"></div>
@@ -31,8 +31,12 @@ export default {
   name: 'free',
   methods: {
     sendQu: function(event) {
+      if (/[a-z]/ig.test(document.forms.quForm.elements.qu.value)) {
+        document.querySelector('#sendMsg').innerHTML = `Латинські літери та посилання не допустимі!`;
+        document.querySelector('#sendMsg').style.color = 'red';
+        return;
+      }
       document.querySelector('.loader-mini').style.display = 'inline-block';
-      event.preventDefault();
       var db = firebase.database();
       var form = document.forms.quForm;
       var msg = document.querySelector('#sendMsg');
