@@ -21,6 +21,7 @@ let simpleMsg = document.querySelector('#simpleMsg');
 let proMsg = document.querySelector('#proMsg');
 let save = document.querySelector('#saveQu');
 let send = document.querySelector('#sendButt');
+let del = document.querySelector('#delButt');
 let rezMsg = document.querySelector('#rezSave');
 let paidCheck = document.querySelector('#ansPaid');
 
@@ -32,6 +33,7 @@ auth.onAuthStateChanged(user => {
     if (auth.currentUser.email == 'deftime@gmail.com') {
       send.disabled = false;
       paidCheck.disabled = false;
+      del.disabled = false;
     }
   }
 })
@@ -141,4 +143,12 @@ send.addEventListener('click', () => {
   })
 
   db.ref('Questions').child(id).update({sendflag: true});
+})
+
+// Delete question from base!
+del.addEventListener('click', () => {
+  if (confirm('Realy DELETE this question?')) {
+    db.ref('Questions').child(id).remove();
+    window.location.href = 'manage.html';
+  }
 })
