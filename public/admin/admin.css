@@ -169,6 +169,10 @@ form[name=filterForm] {
   left: 0;
 }
 
+#rezSave {
+  height: 1px;
+}
+
 /* Pre-loader styles */
 
 .loader {

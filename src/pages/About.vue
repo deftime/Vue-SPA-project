@@ -17,7 +17,7 @@
       <label for="ff-text">Ваше повідомлення:</label><br>
       <textarea name="fftext" id="ff-text" rows="8" cols="80" required></textarea><br>
       <div id="okLine"></div>
-      <input type="submit" name="ff-button" value="Надсілати"><div class="loader-mini"></div>
+      <input type="submit" name="ff-button" value="Надіслати"><div class="loader-mini"></div>
     </form>
   </div>
 </template>

@@ -86,7 +86,6 @@ form.addEventListener('submit', (event) => {
 save.addEventListener('click', () => {
   let upObj = {};
   upObj.answer = form.ans.value;
-  upObj.author = auth.currentUser.email.slice(0, auth.currentUser.email.indexOf('@'));
   if (upObj.answer != '') {
     upObj.answerflag = true;
   } else {
@@ -98,17 +97,26 @@ save.addEventListener('click', () => {
     upObj.paidflag = false;
   }
 
-  db.ref('Questions').child(id).update(upObj)
-    .then(() => {
-      rezMsg.innerText = 'Відповідь записана';
-      rezMsg.style.color = 'green';
-      setTimeout(() => {rezMsg.innerText = ''}, 2000);
+  db.ref('Questions').child(id).once('value')
+    .then(snap => {
+      let currQu = snap.val();
+      if (!currQu.author) {
+        upObj.author = auth.currentUser.email.slice(0, auth.currentUser.email.indexOf('@'));
+      }
     })
-    .catch(err => {
-      rezMsg.innerText = 'Зберегти не вдалося!';
-      rezMsg.style.color = 'red';
-      setTimeout(() => {rezMsg.innerText = ''}, 2000);
-      console.log(err.message);
+    .then(() => {
+      db.ref('Questions').child(id).update(upObj)
+        .then(() => {
+          rezMsg.innerText = 'Відповідь записана';
+          rezMsg.style.color = 'green';
+          setTimeout(() => {rezMsg.innerText = ''}, 2000);
+        })
+        .catch(err => {
+          rezMsg.innerText = 'Зберегти не вдалося!';
+          rezMsg.style.color = 'red';
+          setTimeout(() => {rezMsg.innerText = ''}, 2000);
+          console.log(err.message);
+        })
     })
 })
 
@@ -116,11 +124,15 @@ save.addEventListener('click', () => {
 send.addEventListener('click', () => {
   // window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=${form.ans.value}`);
 
+  if (!confirm('Realy SEND this question to customer?')) {
+    return;
+  }
+
   let toClientSend = {
     from: 'info@justa.com.ua',
     to: [clientMail.innerText],
     subject: 'Відповідь на Ваше питання',
-    html_body: `<p><strong>Доброго дня, вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p><p>Ми підготували відповідь на ваше питання, яке ви відправили нам через сайт наших партнерів. Майте на увазі, що це коротка первинна загальна відповідь, яка сформована на основі ваших слів. Для отримання більш детальної консультації - будь ласка зверніться до нашого офісу з усіма необхідними документами та максимально детальним обсягом інформації про вашу ситуацію.</p><p><em><strong>Ваше питання:</strong></em></p><p></p>${form.qu.value}<p><em><strong>Відповідь:</strong></em></p><p>${form.ans.value}</p>`
+    html_body: `<p><strong>Доброго дня, вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p><p>Ми підготували відповідь на ваше питання, яке ви відправили нам через сайт наших партнерів. Майте на увазі, що це відповідь, яка сформована на основі ваших слів. Для отримання більш детальної консультації - будь ласка зверніться до нашого офісу з усіма необхідними документами та максимально детальним обсягом інформації про вашу ситуацію.</p><p><em><strong>Ваше питання:</strong></em></p><p></p>${form.qu.value}<p><em><strong>Відповідь:</strong></em></p><p>${form.ans.value}</p>`
   }
 
   fetch('http://api.mailhandler.ru/message/send/', {
@@ -136,13 +148,12 @@ send.addEventListener('click', () => {
     rezMsg.innerText = 'Відповідь надіслано!';
     rezMsg.style.color = 'green';
     setTimeout(() => {rezMsg.innerText = ''}, 2000);
+    db.ref('Questions').child(id).update({sendflag: true});
   }).catch(err => {
     console.log(err.message);
     rezMsg.innerText = 'Надіслати не вдалося!';
     rezMsg.style.color = 'red';
   })
-
-  db.ref('Questions').child(id).update({sendflag: true});
 })
 
 // Delete question from base!
