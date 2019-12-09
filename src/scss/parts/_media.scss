@@ -1,17 +1,4 @@
-@media screen and (max-width: 1000px) {
-  .main {
-    width: 100%;
-    h1 {
-      font-size: 35px;
-    }
-    h2 {
-      font-size: 20px;
-    }
-    .buttonFree {
-      font-size: 17px;
-      padding: 15px;
-    }
-  }
+@media screen and (max-width: 1090px) {
 
   /* HOW IT WORKS */
 
@@ -31,6 +18,22 @@
       p {
         font-size: 15px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 100%;
+    h1 {
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .buttonFree {
+      font-size: 17px;
+      padding: 15px;
     }
   }
 
