@@ -19,7 +19,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 window.onload = function() {
-  if (window.location.href !== 'http://localhost:8080/' && window.location.href !== 'http://qu.justa.com.ua/') {
+  if (window.location.href !== 'http://localhost:8080/' && window.location.host !== 'qu.justa.com.ua') {
     document.querySelector('.innerWrap').style.opacity = '0.3';
   }
 }

@@ -40,7 +40,7 @@ export default {
         html_body: `<p>Повідомлення з сайту Онлайн-допомоги</p><p>Від: ${email}</p><hr><p>${msg}</p>`
       }
 
-      fetch('http://api.mailhandler.ru/message/send/', {
+      fetch('https://api.mailhandler.ru/message/send/', {
         method: 'POST',
         headers: {
           'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
