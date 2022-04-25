@@ -124,11 +124,12 @@ save.addEventListener('click', () => {
 // Send ready question to client
 send.addEventListener('click', () => {
 
-  if (!confirm('Really SEND this question to customer?')) {
-    return;
-  }
+  if (confirm('Really SEND this question to customer?')) {
 
-  window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=Вас вітає Правова група ЮСТА-ЕКСПЕРТ! Ми підготували відповідь на ваше питання. ПИТАННЯ: ${form.qu.value} ВІДПОВІДЬ: ${form.ans.value}`);
+      window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=Вас вітає Правова група ЮСТА-ЕКСПЕРТ! Ми підготували відповідь на ваше питання. ПИТАННЯ: ${form.qu.value} ВІДПОВІДЬ: ${form.ans.value}`);
+
+      db.ref('Questions').child(id).update({sendflag: true});
+  }
 
   // let toClientSend = {
   //   from: 'info@justa.com.ua',
