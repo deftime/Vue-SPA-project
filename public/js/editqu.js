@@ -30,7 +30,8 @@ auth.onAuthStateChanged(user => {
   if (!user) {
     window.location.href = 'index.html';
   } else {
-    if (auth.currentUser.email == 'deftime@gmail.com') {
+    if (auth.currentUser.email == 'deftime@gmail.com' || auth.currentUser.email == 'lmgorbunova@gmail.com') {
+      console.log('admin!');
       send.disabled = false;
       paidCheck.disabled = false;
       del.disabled = false;
@@ -122,38 +123,39 @@ save.addEventListener('click', () => {
 
 // Send ready question to client
 send.addEventListener('click', () => {
-  // window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=${form.ans.value}`);
 
-  if (!confirm('Realy SEND this question to customer?')) {
+  if (!confirm('Really SEND this question to customer?')) {
     return;
   }
 
-  let toClientSend = {
-    from: 'info@justa.com.ua',
-    to: [clientMail.innerText],
-    subject: 'Відповідь на Ваше питання',
-    html_body: `<p><strong>Вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p><p>Дякуємо, що скористалися нашим сервісом юридичної онлайн-допомоги! Ми підготували відповідь на ваше питання у відповідності з типом обраної відповіді.</p><p>Майте на увазі, що це відповідь, яка сформована на основі ваших слів. Для отримання більш детальної консультації - будь ласка зверніться до нашого офісу з усіма необхідними документами та максимально детальним обсягом інформації про вашу ситуацію.</p><p>Якщо ви помітили помилки або незручності у роботі нашого сервісу - будь ласка повідомте нас листом на цю адресу deftime@gmail.com або надішліть повідомлення через форму зворотнього зв'язку у розділі "Про нас".</p><p><em><strong>Ваше питання:</strong></em></p><p>${form.qu.value}</p><p><em><strong>Відповідь:</strong></em></p><p>${form.ans.value}</p>`
-  }
+  window.open(`mailto:${clientMail.innerText}?subject=Відповідь на ваше питання&body=Вас вітає Правова група ЮСТА-ЕКСПЕРТ! Ми підготували відповідь на ваше питання. ПИТАННЯ: ${form.qu.value} ВІДПОВІДЬ: ${form.ans.value}`);
 
-  fetch('https://api.mailhandler.ru/message/send/', {
-    method: 'POST',
-    headers: {
-      'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(toClientSend)
-  }).then(resp => {
-    console.log(resp.status);
-    rezMsg.innerText = 'Відповідь надіслано!';
-    rezMsg.style.color = 'green';
-    setTimeout(() => {rezMsg.innerText = ''}, 2000);
-    db.ref('Questions').child(id).update({sendflag: true});
-  }).catch(err => {
-    console.log(err.message);
-    rezMsg.innerText = 'Надіслати не вдалося!';
-    rezMsg.style.color = 'red';
-  })
+  // let toClientSend = {
+  //   from: 'info@justa.com.ua',
+  //   to: [clientMail.innerText],
+  //   subject: 'Відповідь на Ваше питання',
+  //   html_body: `<p><strong>Вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p><p>Дякуємо, що скористалися нашим сервісом юридичної онлайн-допомоги! Ми підготували відповідь на ваше питання у відповідності з типом обраної відповіді.</p><p>Майте на увазі, що це відповідь, яка сформована на основі ваших слів. Для отримання більш детальної консультації - будь ласка зверніться до нашого офісу з усіма необхідними документами та максимально детальним обсягом інформації про вашу ситуацію.</p><p>Якщо ви помітили помилки або незручності у роботі нашого сервісу - будь ласка повідомте нас листом на цю адресу deftime@gmail.com або надішліть повідомлення через форму зворотнього зв'язку у розділі "Про нас".</p><p><em><strong>Ваше питання:</strong></em></p><p>${form.qu.value}</p><p><em><strong>Відповідь:</strong></em></p><p>${form.ans.value}</p>`
+  // }
+  //
+  // fetch('https://api.mailhandler.ru/message/send/', {
+  //   method: 'POST',
+  //   headers: {
+  //     'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
+  //     'Accept': 'application/json',
+  //     'Content-Type': 'application/json'
+  //   },
+  //   body: JSON.stringify(toClientSend)
+  // }).then(resp => {
+  //   console.log(resp.status);
+  //   rezMsg.innerText = 'Відповідь надіслано!';
+  //   rezMsg.style.color = 'green';
+  //   setTimeout(() => {rezMsg.innerText = ''}, 2000);
+  //   db.ref('Questions').child(id).update({sendflag: true});
+  // }).catch(err => {
+  //   console.log(err.message);
+  //   rezMsg.innerText = 'Надіслати не вдалося!';
+  //   rezMsg.style.color = 'red';
+  // })
 })
 
 // Delete question from base!
