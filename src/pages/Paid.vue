@@ -55,31 +55,34 @@ export default {
       let randNum = parseInt(Math.random()*100000);
       db.ref('Questions').child(`Qu-${randNum}`).set(objQu)
         .then(() => {
+          document.querySelector('.loader-mini').style.display = 'none';
           if (window.location.href.indexOf('free') > -1) {
             msg.innerHTML = `Питання надіслано!<br>Чекайте відповідь на вказаний Вами e-mail.`;
           } else {
-            let sendObj = {
-            from: 'info@justa.com.ua',
-            to: [email],
-            subject: 'Сплата Питання PRO',
-            html_body: `<p><strong>Вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p>Дякуємо, що скористалися нашим сервісом юридичної онлайн-консультації. Ви обрали пріоритетне питання PRO, відповідь на яке є платною. Для отримання відповіді будь ласка здійсніть оплату на карту - 5168 7422 2090 3607.</p><p><strong>ВАЖЛИВО!</strong> Щоб ми могли ідентифікувати ваш платіж проводьте оплату від того самого імені, яким ви підписали запитання. Або, якщо здійснюєте оплату від іншого імені - напишіть нам його у відповідь на цей лист. Якщо ви сплачуєте через термінал вказуйте прізвище та ім'я у коментарях до транзакції. (Також бажано зберегти квитанцію до того моменту, поки ви не отримаєте відповідь).</p>`
-            }
-            fetch('https://api.mailhandler.ru/message/send/', {
-              method: 'POST',
-              headers: {
-                'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(sendObj)
-            }).then(response => {
-              document.querySelector('.loader-mini').style.display = 'none';
-              msg.innerHTML = `Питання надіслано!<br>Інструкції по оплаті відправлено на вказаний Вами e-mail.`;
-              console.log(response.status);
-            }).catch(error => {
-              msg.innerHTML = `Виникла помилка. Спробуйте ще раз або зверніться до адміністратора, вказавши цю помилку:<br>${error.message}`;
-              console.log(`НЕ отправлено письмо с инструкциями! ${error.message}`);
-            })
+            msg.innerHTML = `Питання надіслано!<br>Для проведення оплати пишіть на <strong>deftime@gmail.com</strong>`;
+
+            // let sendObj = {
+            // from: 'info@justa.com.ua',
+            // to: [email],
+            // subject: 'Сплата Питання PRO',
+            // html_body: `<p><strong>Вас вітає "Правова група ЮСТА-ЕКСПЕРТ"!</strong></p>Дякуємо, що скористалися нашим сервісом юридичної онлайн-консультації. Ви обрали пріоритетне питання PRO, відповідь на яке є платною. Для отримання відповіді будь ласка здійсніть оплату на карту - 5168 7422 2090 3607.</p><p><strong>ВАЖЛИВО!</strong> Щоб ми могли ідентифікувати ваш платіж проводьте оплату від того самого імені, яким ви підписали запитання. Або, якщо здійснюєте оплату від іншого імені - напишіть нам його у відповідь на цей лист. Якщо ви сплачуєте через термінал вказуйте прізвище та ім'я у коментарях до транзакції. (Також бажано зберегти квитанцію до того моменту, поки ви не отримаєте відповідь).</p>`
+            // }
+            // fetch('https://api.mailhandler.ru/message/send/', {
+            //   method: 'POST',
+            //   headers: {
+            //     'X-Secure-Token': '4666a172-9424-414c-89a7-31e8a103a807',
+            //     'Accept': 'application/json',
+            //     'Content-Type': 'application/json'
+            //   },
+            //   body: JSON.stringify(sendObj)
+            // }).then(response => {
+            //   document.querySelector('.loader-mini').style.display = 'none';
+            //   msg.innerHTML = `Питання надіслано!<br>Інструкції по оплаті відправлено на вказаний Вами e-mail.`;
+            //   console.log(response.status);
+            // }).catch(error => {
+            //   msg.innerHTML = `Виникла помилка. Спробуйте ще раз або зверніться до адміністратора, вказавши цю помилку:<br>${error.message}`;
+            //   console.log(`НЕ отправлено письмо с инструкциями! ${error.message}`);
+            // })
           }
 
         })
