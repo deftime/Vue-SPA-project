@@ -35,14 +35,17 @@ export default {
       }
 
       open.style.height = '';
+      open.classList.remove('open');
     },
     mobilemenu: function(event) {
       let open = document.querySelector('.mainMenu');
 
       if (open.style.height) {
         open.style.height = '';
+        open.classList.remove('open');
       } else {
         open.style.height = '450px';
+        open.classList.add('open');
       }
     }
   }
@@ -51,5 +54,4 @@ export default {
 
 <style lang="scss">
   @import "@/scss/main.scss";
-
 </style>

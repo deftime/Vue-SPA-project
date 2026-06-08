@@ -58,7 +58,7 @@ export default {
           if (window.location.href.indexOf('free') > -1) {
             msg.innerHTML = `Питання надіслано!<br>Чекайте відповідь на вказаний Вами e-mail.`;
           } else {
-            msg.innerHTML = `Питання надіслано!<br>Для проведення оплати пишіть на <strong>deftime@gmail.com</strong>`;
+            msg.innerHTML = `Питання надіслано!<br>Для проведення оплати чекайте інструкції на вказаний Вами e-mail.`;
 
 
             // let sendObj = {

@@ -1,9 +1,3 @@
-// let butt = document.querySelector('.create');
-// butt.addEventListener('click', () => {
-//   createRow(1, 'Question', 'PRO', 'No', 'No', 'Lawer', 'today');
-// });
-
-
 let table = document.querySelector('tbody');
 
 var db = firebase.database();
@@ -144,7 +138,6 @@ function sortList(event) {
   }
 
   for (let key of tabForFilter) {
-    // console.log(key.children[1].innerText);
     if (key.children[filterId].innerText == curr || key == document.querySelector('.thead-light > tr') || curr == 'all') {
       key.hidden = false;
     } else {

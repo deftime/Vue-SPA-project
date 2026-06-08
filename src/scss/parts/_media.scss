@@ -139,7 +139,7 @@
 @media screen and (max-width: 685px) {
   .mainMenu {
     display: block;
-    height: 60px;
+    height: 55px;
     background-color: rgba(255, 255, 255, 0.5);
     overflow: hidden;
     transition: 1s;
@@ -155,15 +155,33 @@
     .burger {
       display: block;
       width: 60px;
-      height: 50px;
       margin: 10px auto;
       cursor: pointer;
       hr {
         background-color: black;
-        height: 8px;
+        height: 5px;
         border: none;
         border-radius: 5px;
-        margin-top: 5px;
+        transition: 0.3s ease;
+        transform-origin: left;
+        &:nth-child(n+2) {
+          margin-top: 9px;
+        }
+      }
+    }
+    &.open {
+      .burger {
+        hr {
+          &:nth-child(1) {
+            transform: rotate(28deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: rotate(-28deg);
+          }
+        }
       }
     }
   }
@@ -228,7 +246,6 @@
     height: 320px;
     padding: 23px;
     border-top: 1px dotted black;
-    // margin-bottom: 30px;
   }
 
   .mainFaq {
@@ -260,6 +277,7 @@
   /* About page */
 
   .mainAbout {
+    padding: 10px 25px;
     p img {
       width: 80%;
       padding: 0 0 30px 0;
