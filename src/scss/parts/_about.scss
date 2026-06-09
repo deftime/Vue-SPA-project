@@ -4,26 +4,46 @@
   padding: 20px 50px;
   @extend %descBlock;
   hr {
-  margin: 30px 0;
+    margin: 30px 0;
   }
-  p img {
-    padding: 0 50px 30px 50px;
-    float: left;
+  .about {
+    .logo-link {
+      display: block;
+      width: 200px;
+      height: 200px;
+      float: left;
+      margin: 0 50px 25px 0;
+      box-sizing: border-box;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .aboutText {
+      p:nth-child(n+2) {
+        margin-top: 20px;
+      }
+    }
   }
   h2, h1 {
+    font-size: 30px;
     text-align: center;
     margin: 50px 0;
-    font-size: 30px;
   }
   .partners {
-    margin-bottom: 20px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
   }
   .partner {
+    @extend %flexCenter;
     width: 200px;
     height: 200px;
     text-align: center;
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
 

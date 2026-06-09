@@ -334,6 +334,23 @@
       width: 98%;
     }
   }
+
+  //About Page
+
+  .mainAbout {
+    .about {
+      .logo-link {
+        float: none;
+        margin: 0 auto 25px auto;
+      }
+    }
+    .partners {
+      .partner:nth-child(2) {
+        order: -1;
+      }
+    }
+  }
+
 }
 
 @media screen and (max-width: 450px) {
