@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import firebase from 'firebase/app';
 
 export default {
   name: 'about',
@@ -46,13 +47,22 @@ export default {
     sendMsg: function (event) {
       document.querySelector('.loader-mini').style.display = 'inline-block';
       event.preventDefault();
+      let randNum = parseInt(Math.random()*100000);
       let email = document.forms.formMsg.elements.ffmail.value;
       let msg = document.forms.formMsg.elements.fftext.value;
 
-      document.querySelector('.loader-mini').style.display = 'none';
-      document.querySelector('#okLine').innerHTML = `Форма тимчасово не працює, вибачаємося за незручності. Для зв'язку з нами пишіть - <strong>deftime@gmail.com</strong>`;
+      let db = firebase.database();
+      let objFe = new this.FeObject(`Fe-${randNum}`, email, msg);
+
+      db.ref('Feedbacks').child(`Fe-${randNum}`).set(objFe)
+        .then(() => {
+          document.querySelector('.loader-mini').style.display = 'none';
+          document.querySelector('#okLine').innerHTML = "Дякуємо за ваше повідомлення! Ми зв'яжемося з вами по вказній пошті.";
+        })
 
 
+      // Старый код, где мы отправляли данные с формы напрямую на почту.
+      //
       // let sendObj = {
       //   from: 'info@justa.com.ua',
       //   to: ['deftime@gmail.com'],
@@ -80,6 +90,22 @@ export default {
       //   document.querySelector('#okLine').style.color = 'red';
       //   console.log(error.message);
       // })
+    },
+    FeObject: function(id, email, message) {
+      this.id = id;
+      this.email = email;
+      this.message = message;
+      this.answerflag = false;
+      this.date = getFormattedDate();
+
+      function getFormattedDate() {
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        return `${day}.${month}.${year}`;
+      }
+
     }
   }
 }
