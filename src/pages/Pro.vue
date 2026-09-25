@@ -24,7 +24,7 @@
           <td><img src="../images/check.png" alt="check" width="30px"></td>
         </tr>
         <tr>
-          <td>Відповідь найближчим часом (поза чергою, 1-2 доби)</td>
+          <td>Відповідь найближчим часом (поза чергою)</td>
           <td><img src="../images/cross.png" alt="check" width="30px"></td>
           <td><img src="../images/check.png" alt="check" width="30px"></td>
         </tr>
@@ -35,6 +35,11 @@
         </tr>
         <tr>
           <td>Залучення до відповіді досвітченого юриста спеціального напрямку</td>
+          <td><img src="../images/cross.png" alt="check" width="30px"></td>
+          <td><img src="../images/check.png" alt="check" width="30px"></td>
+        </tr>
+        <tr>
+          <td>Продовження спілкування з юристом після отримання відповіді</td>
           <td><img src="../images/cross.png" alt="check" width="30px"></td>
           <td><img src="../images/check.png" alt="check" width="30px"></td>
         </tr>
