@@ -21,7 +21,7 @@
       <a href="https://justa.com.ua/" target="_blank" class="partner" title="ЮСТА Експерт">
         <img src="../images/justa.png" alt="justa_company">
       </a>
-      <a href="https://www.facebook.com/ao.gromadaizakon" target="_blank" class="partner" title="Адвокатське об'єднання &quot;Громада і Закон&quot;">
+      <a href="https://gromadazakon.com.ua/" target="_blank" class="partner" title="Адвокатське об'єднання &quot;Громада і Закон&quot;">
         <img src="../images/gromadaBig.jpg" alt="advocat_law_firm">
       </a>
     </div>
